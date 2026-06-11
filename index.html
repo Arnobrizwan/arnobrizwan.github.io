@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARNOB RIZWAN AHMAD — AI / ML Engineer & Full-Stack Developer</title>
+<meta name="description" content="Arnob Rizwan Ahmad — ML engineer & full-stack developer shipping AI products across 4 countries. PyTorch, AWS Bedrock, React Native, Flutter, FastAPI.">
+<meta property="og:title" content="ARNOB RIZWAN AHMAD — AI/ML × Full-Stack × Mobile">
+<meta property="og:description" content="93 repos. 4 countries. 40 schools. 15 AI agents. Open to AI engineering roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Archivo:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0b;
+  --ink-2:#131311;
+  --paper:#f2efe6;
+  --acid:#c8f73c;
+  --tang:#ff5c1a;
+  --mute:#8d8a7e;
+  --line:#2a2a26;
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:var(--acid);color:var(--ink)}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'Archivo',sans-serif;
+  overflow-x:hidden;
+  cursor:none;
+}
+@media (hover:none),(max-width:768px){ body{cursor:auto} .cursor,.cursor-ring{display:none!important} }
+
+/* ---------- grain ---------- */
+body::after{
+  content:"";position:fixed;inset:-50%;z-index:9000;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 8s steps(10) infinite;
+}
+@keyframes grain{
+  0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}30%{transform:translate(3%,-15%)}
+  50%{transform:translate(12%,9%)}70%{transform:translate(9%,4%)}90%{transform:translate(-1%,7%)}
+}
+
+/* ---------- cursor ---------- */
+.cursor{position:fixed;width:10px;height:10px;background:var(--acid);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--acid);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .25s;mix-blend-mode:difference}
+body.cursor-grow .cursor-ring{width:64px;height:64px;opacity:.6}
+
+/* ---------- ticker ---------- */
+.ticker{
+  background:var(--acid);color:var(--ink);overflow:hidden;white-space:nowrap;
+  font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;
+  padding:9px 0;position:relative;z-index:20;text-transform:uppercase;
+}
+.ticker-track{display:inline-block;animation:tick 28s linear infinite}
+.ticker span{margin:0 18px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
+  padding:18px clamp(20px,5vw,64px);
+  background:color-mix(in srgb,var(--ink) 80%,transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:18px;color:var(--paper);text-decoration:none;letter-spacing:-.02em}
+.logo em{color:var(--acid);font-style:normal}
+.nav-links{display:flex;gap:clamp(14px,3vw,34px);align-items:center}
+.nav-links a{
+  color:var(--mute);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:12px;
+  text-transform:uppercase;letter-spacing:.12em;transition:color .2s;
+}
+.nav-links a:hover{color:var(--acid)}
+.nav-cta{
+  background:var(--paper);color:var(--ink)!important;padding:9px 18px;border-radius:99px;font-weight:700;
+  transition:background .2s,transform .2s;
+}
+.nav-cta:hover{background:var(--acid);transform:rotate(-2deg)}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,9vh,110px) clamp(20px,5vw,64px) 60px;position:relative}
+.hero-meta{
+  display:flex;gap:14px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin-bottom:28px;flex-wrap:wrap;
+}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--acid);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,247,60,.6)}60%{box-shadow:0 0 0 9px rgba(200,247,60,0)}}
+.hero h1{
+  font-family:'Unbounded',sans-serif;font-weight:900;line-height:.94;letter-spacing:-.03em;
+  font-size:clamp(46px,11.5vw,164px);text-transform:uppercase;
+}
+.hero h1 .row{display:block;overflow:hidden}
+.hero h1 .row span{display:block;transform:translateY(110%);animation:rise .9s cubic-bezier(.16,1,.3,1) forwards}
+.hero h1 .row:nth-child(2) span{animation-delay:.12s}
+.hero h1 .row:nth-child(3) span{animation-delay:.24s}
+@keyframes rise{to{transform:translateY(0)}}
+.hero h1 .ghost{
+  color:transparent;-webkit-text-stroke:2px var(--paper);
+}
+.hero h1 .zap{color:var(--acid)}
+.hero-sub{
+  max-width:560px;margin-top:34px;font-size:clamp(16px,1.6vw,20px);line-height:1.6;color:#cfccc0;
+}
+.hero-sub b{color:var(--paper)}
+.hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.btn{
+  font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  padding:15px 26px;border-radius:99px;text-decoration:none;display:inline-flex;align-items:center;gap:9px;
+  transition:transform .2s,background .2s,color .2s;border:1.5px solid var(--paper);
+}
+.btn-solid{background:var(--acid);border-color:var(--acid);color:var(--ink)}
+.btn-solid:hover{transform:rotate(-2deg) scale(1.04);background:var(--paper);border-color:var(--paper)}
+.btn-ghost{color:var(--paper)}
+.btn-ghost:hover{background:var(--paper);color:var(--ink);transform:rotate(1.5deg)}
+.sticker{
+  position:absolute;right:clamp(16px,7vw,110px);top:clamp(60px,12vh,140px);
+  width:128px;height:128px;border-radius:50%;background:var(--tang);color:var(--ink);
+  display:grid;place-items:center;text-align:center;font-family:'Unbounded',sans-serif;font-weight:800;
+  font-size:12px;line-height:1.25;transform:rotate(10deg);animation:bob 5s ease-in-out infinite;
+  box-shadow:0 14px 40px rgba(255,92,26,.35);z-index:5;text-transform:uppercase;padding:14px;
+}
+@keyframes bob{0%,100%{transform:rotate(10deg) translateY(0)}50%{transform:rotate(6deg) translateY(-12px)}}
+@media(max-width:760px){.sticker{width:96px;height:96px;font-size:10px;top:auto;bottom:-30px}}
+
+/* ---------- stats ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.stat{
+  padding:30px clamp(16px,2.5vw,40px);border-right:1px solid var(--line);
+  transition:background .25s;
+}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--ink-2)}
+.stat .num{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,46px);color:var(--acid)}
+.stat .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin-top:8px}
+
+/* ---------- marquee skills ---------- */
+.skill-marquee{
+  background:var(--paper);color:var(--ink);transform:rotate(-1.6deg) scale(1.02);margin:70px 0;
+  overflow:hidden;white-space:nowrap;padding:16px 0;border-top:4px solid var(--acid);border-bottom:4px solid var(--acid);
+}
+.skill-marquee .ticker-track{animation-duration:36s}
+.skill-marquee span{
+  font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(18px,2.4vw,30px);text-transform:uppercase;margin:0 26px;
+}
+.skill-marquee i{font-style:normal;color:var(--tang)}
+
+/* ---------- sections ---------- */
+section{padding:clamp(60px,10vh,120px) clamp(20px,5vw,64px)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(36px,6vh,64px);flex-wrap:wrap}
+.sec-head .idx{font-family:'JetBrains Mono',monospace;color:var(--tang);font-size:14px;font-weight:700}
+.sec-head h2{
+  font-family:'Unbounded',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;
+  font-size:clamp(34px,6vw,76px);line-height:1;
+}
+.sec-head .tail{color:var(--mute);font-size:15px;max-width:380px;margin-left:auto}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- experience ---------- */
+.xp{border-top:1px solid var(--line)}
+.xp-item{
+  display:grid;grid-template-columns:90px 1.1fr 1.6fr;gap:clamp(16px,3vw,44px);
+  padding:38px 0;border-bottom:1px solid var(--line);align-items:start;transition:background .25s,padding-left .25s;
+}
+.xp-item:hover{background:var(--ink-2);padding-left:14px}
+.xp-num{font-family:'JetBrains Mono',monospace;color:var(--tang);font-size:13px;padding-top:6px}
+.xp-role h3{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(18px,2vw,24px);text-transform:uppercase;line-height:1.2}
+.xp-role .co{color:var(--acid);font-weight:700;margin-top:6px;font-size:15px}
+.xp-role .when{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute);margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
+.xp-body{color:#c9c6ba;line-height:1.65;font-size:15px}
+.xp-body li{margin-bottom:9px;list-style:none;padding-left:20px;position:relative}
+.xp-body li::before{content:"→";position:absolute;left:0;color:var(--tang)}
+.xp-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tag{
+  font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+  border:1px solid var(--line);color:var(--mute);padding:4px 11px;border-radius:99px;
+}
+@media(max-width:820px){.xp-item{grid-template-columns:1fr}.xp-num{display:none}}
+
+/* ---------- projects ---------- */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:38px}
+.fbtn{
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  padding:10px 20px;border-radius:99px;border:1.5px solid var(--line);background:none;color:var(--mute);
+  cursor:pointer;transition:all .2s;
+}
+.fbtn:hover{border-color:var(--acid);color:var(--acid)}
+.fbtn.on{background:var(--acid);border-color:var(--acid);color:var(--ink);transform:rotate(-2deg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:14px;
+  background:var(--ink-2);position:relative;overflow:hidden;text-decoration:none;color:var(--paper);
+  transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s;
+}
+.card::before{
+  content:"";position:absolute;inset:0;background:var(--acid);transform:translateY(101%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:0;
+}
+.card:hover{transform:translateY(-6px) rotate(-.5deg);border-color:var(--acid)}
+.card:hover::before{transform:translateY(0)}
+.card>*{position:relative;z-index:1}
+.card:hover h3,.card:hover p,.card:hover .ct,.card:hover .arrow{color:var(--ink)}
+.card:hover .tag{border-color:rgba(11,11,11,.3);color:var(--ink)}
+.card .ct{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--tang);font-weight:700}
+.card h3{font-family:'Unbounded',sans-serif;font-weight:800;font-size:20px;text-transform:uppercase;line-height:1.25;transition:color .3s}
+.card p{color:#bdbaae;font-size:14.5px;line-height:1.6;flex:1;transition:color .3s}
+.card .meta{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.card .tags{display:flex;gap:7px;flex-wrap:wrap}
+.card .arrow{font-size:26px;transition:transform .3s,color .3s}
+.card:hover .arrow{transform:translate(4px,-4px)}
+.card.hide{display:none}
+
+/* ---------- skills ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.skill-col{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--ink-2);transition:border-color .25s,transform .25s}
+.skill-col:hover{border-color:var(--tang);transform:translateY(-4px)}
+.skill-col h4{font-family:'Unbounded',sans-serif;font-size:14px;text-transform:uppercase;color:var(--acid);margin-bottom:18px;letter-spacing:.04em}
+.skill-col ul{list-style:none}
+.skill-col li{
+  font-family:'JetBrains Mono',monospace;font-size:13px;color:#c9c6ba;padding:7px 0;border-bottom:1px dashed var(--line);
+}
+.skill-col li:last-child{border-bottom:none}
+
+/* ---------- creds ---------- */
+.creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.cred{
+  border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:var(--ink-2);
+  transition:transform .25s,border-color .25s;
+}
+.cred:hover{transform:rotate(-1deg);border-color:var(--acid)}
+.cred .k{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--tang);margin-bottom:12px}
+.cred h4{font-family:'Unbounded',sans-serif;font-size:17px;text-transform:uppercase;line-height:1.3;margin-bottom:10px}
+.cred p{color:var(--mute);font-size:14px;line-height:1.6}
+
+/* ---------- footer ---------- */
+footer{padding:clamp(70px,12vh,130px) clamp(20px,5vw,64px) 40px;border-top:1px solid var(--line);position:relative}
+footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--mute);margin-bottom:24px}
+.mail{
+  font-family:'Unbounded',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;
+  font-size:clamp(28px,6.5vw,84px);color:var(--paper);text-decoration:none;line-height:1.05;display:inline-block;
+  transition:color .25s;word-break:break-word;
+}
+.mail:hover{color:var(--acid)}
+.foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:64px;align-items:center}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap}
+.foot-links a{color:var(--mute);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;transition:color .2s}
+.foot-links a:hover{color:var(--acid)}
+.foot-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:#55534a}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>● OPEN TO AI / ML &amp; FULL-STACK ROLES</span><span>● GRADUATING JULY 2026 — UTM</span><span>● SHIPPING FOR CLIENTS IN 🇱🇺 🇺🇸 🇧🇩 🇲🇾</span><span>● 93 REPOS &amp; COUNTING</span>
+    <span>● OPEN TO AI / ML &amp; FULL-STACK ROLES</span><span>● GRADUATING JULY 2026 — UTM</span><span>● SHIPPING FOR CLIENTS IN 🇱🇺 🇺🇸 🇧🇩 🇲🇾</span><span>● 93 REPOS &amp; COUNTING</span>
+  </div>
+</div>
+
+<nav>
+  <a class="logo" href="#top">ARNOB<em>.</em></a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Stack</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="Arnob_Rizwan_Ahmad_Resume.pdf" download>Resume ↓</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-meta">
+    <span class="dot"></span>
+    <span>Johor Bahru, Malaysia → Remote everywhere</span>
+    <span>/// AI · ML · Full-Stack · Mobile</span>
+  </div>
+  <div class="sticker" aria-hidden="true">Open<br>to work<br>★ 2026 ★</div>
+  <h1>
+    <span class="row"><span>Arnob</span></span>
+    <span class="row"><span class="ghost">Rizwan</span></span>
+    <span class="row"><span>Ahmad<span class="zap">.</span></span></span>
+  </h1>
+  <p class="hero-sub">
+    Final-year Software Engineering student at <b>Universiti Teknologi Malaysia</b> who doesn't wait for graduation to ship.
+    <b>ML Engineer</b> for a US news-intelligence platform, <b>Founding Backend Engineer</b> at an AI storage startup,
+    and full-stack developer for clients in <b>Luxembourg and Bangladesh</b>. I build LLM-powered agents that actually make it to production.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-solid" href="Arnob_Rizwan_Ahmad_Resume.pdf" download>Download Resume ↓</a>
+    <a class="btn btn-ghost" href="https://github.com/Arnobrizwan" target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/arnob-rizwan-033704239/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+
+<div class="stats reveal">
+  <div class="stat"><div class="num" data-count="93">0</div><div class="lbl">GitHub Repos</div></div>
+  <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">Countries Shipped To</div></div>
+  <div class="stat"><div class="num" data-count="40">0</div><div class="lbl">Schools On My App</div></div>
+  <div class="stat"><div class="num" data-count="15">0</div><div class="lbl">AI Agents, One Platform</div></div>
+  <div class="stat"><div class="num" data-count="14">0</div><div class="lbl">Projects @ Headstarter</div></div>
+</div>
+
+<div class="skill-marquee" aria-hidden="true">
+  <div class="ticker-track">
+    <span>PyTorch <i>✦</i></span><span>AWS Bedrock <i>✦</i></span><span>React Native <i>✦</i></span><span>Flutter <i>✦</i></span><span>FastAPI <i>✦</i></span><span>Next.js <i>✦</i></span><span>LLM Agents <i>✦</i></span><span>TypeScript <i>✦</i></span><span>Firebase <i>✦</i></span><span>Docker <i>✦</i></span>
+    <span>PyTorch <i>✦</i></span><span>AWS Bedrock <i>✦</i></span><span>React Native <i>✦</i></span><span>Flutter <i>✦</i></span><span>FastAPI <i>✦</i></span><span>Next.js <i>✦</i></span><span>LLM Agents <i>✦</i></span><span>TypeScript <i>✦</i></span><span>Firebase <i>✦</i></span><span>Docker <i>✦</i></span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="sec-head reveal">
+    <span class="idx">01</span>
+    <h2>Experience</h2>
+    <p class="tail">Four roles, four time zones, zero finished degrees required. All while studying full-time.</p>
+  </div>
+  <div class="xp">
+    <div class="xp-item reveal">
+      <div class="xp-num">/01</div>
+      <div class="xp-role">
+        <h3>Application Developer</h3>
+        <div class="co">Moien Delivery — Luxembourg 🇱🇺</div>
+        <div class="when">Mar 2026 — Present · Remote</div>
+      </div>
+      <div class="xp-body">
+        <ul>
+          <li>Building a cross-platform delivery app (React Native + Nuxt.js backend) serving three user roles: customers, restaurants, and drivers.</li>
+          <li>Real-time order tracking, driver dispatch, and delivery workflows over REST APIs and WebSocket event streams.</li>
+          <li>Owning features from spec → QA → production on weekly release cycles with international stakeholders.</li>
+        </ul>
+        <div class="xp-tags"><span class="tag">React Native</span><span class="tag">Nuxt.js</span><span class="tag">WebSockets</span><span class="tag">Logistics</span></div>
+      </div>
+    </div>
+    <div class="xp-item reveal">
+      <div class="xp-num">/02</div>
+      <div class="xp-role">
+        <h3>Machine Learning Engineer</h3>
+        <div class="co">AI News HUD (via Mercor) — USA 🇺🇸</div>
+        <div class="when">Oct 2025 — Mar 2026 · Remote Contract</div>
+      </div>
+      <div class="xp-body">
+        <ul>
+          <li>Built and evaluated production PyTorch models for real-time news classification, summarization, and personalized recommendations.</li>
+          <li>Designed evaluation pipelines and ran iterative experiments improving accuracy and inference latency on live traffic.</li>
+          <li>Took ML components from prototype to deployed feature in the platform's core intelligence layer.</li>
+        </ul>
+        <div class="xp-tags"><span class="tag">PyTorch</span><span class="tag">Eval Pipelines</span><span class="tag">NLP</span><span class="tag">Production ML</span></div>
+      </div>
+    </div>
+    <div class="xp-item reveal">
+      <div class="xp-num">/03</div>
+      <div class="xp-role">
+        <h3>Founding Backend Engineer</h3>
+        <div class="co">Framic — Remote</div>
+        <div class="when">Aug 2025 — Present</div>
+      </div>
+      <div class="xp-body">
+        <ul>
+          <li>First backend hire on an AI-powered storage app — owning architecture decisions and core API design from scratch.</li>
+          <li>Leading AI search, real-time indexing, and scalable gallery/drive systems.</li>
+          <li>Working directly with founders to ship fast while keeping the system maintainable as the team scales.</li>
+        </ul>
+        <div class="xp-tags"><span class="tag">System Design</span><span class="tag">AI Search</span><span class="tag">APIs</span><span class="tag">0→1</span></div>
+      </div>
+    </div>
+    <div class="xp-item reveal">
+      <div class="xp-num">/04</div>
+      <div class="xp-role">
+        <h3>Software Engineering Resident</h3>
+        <div class="co">Headstarter — USA 🇺🇸</div>
+        <div class="when">Sep 2024 — Mar 2025 · Remote</div>
+      </div>
+      <div class="xp-body">
+        <ul>
+          <li>Selected for a competitive 6-month US engineering residency; shipped 14+ ML and full-stack projects in Python and TypeScript.</li>
+          <li>Designed and trained 5 neural networks using LLM chaining, hyperparameter tuning, and fine-tuning.</li>
+          <li>Built LLM-powered agents on AWS Bedrock / OpenAI APIs and optimized Docker CI/CD on GitHub Actions, cutting image size and build times.</li>
+        </ul>
+        <div class="xp-tags"><span class="tag">Neural Nets</span><span class="tag">AWS Bedrock</span><span class="tag">CI/CD</span><span class="tag">14+ Projects</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-head reveal">
+    <span class="idx">02</span>
+    <h2>Projects</h2>
+    <p class="tail">A slice of 93 repos — agents, ML systems, and apps real people use.</p>
+  </div>
+  <div class="filters reveal">
+    <button class="fbtn on" data-f="all">All</button>
+    <button class="fbtn" data-f="ai">AI / ML</button>
+    <button class="fbtn" data-f="agents">Agents</button>
+    <button class="fbtn" data-f="mobile">Mobile</button>
+    <button class="fbtn" data-f="full">Full-Stack</button>
+  </div>
+  <div class="grid">
+
+    <a class="card reveal" data-cat="agents ai" href="https://github.com/Arnobrizwan/-CrisisCohort" target="_blank" rel="noopener">
+      <span class="ct">Multi-Agent AI · AWS</span>
+      <h3>CrisisCohort</h3>
+      <p>Climate resilience platform for smallholder farmers — 15 specialized AI agents on AWS Bedrock orchestrating weather alerts, disease diagnostics, and subsidy discovery. Netflix-inspired architecture on Lambda, DynamoDB, CloudFront, API Gateway, and Cognito.</p>
+      <div class="meta"><div class="tags"><span class="tag">Bedrock</span><span class="tag">15 Agents</span><span class="tag">Lambda</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="mobile full" href="#contact">
+      <span class="ct">Client Work · 40 Schools</span>
+      <h3>School Care App</h3>
+      <p>Full-stack school management system adopted by 40 schools across Sylhet, Bangladesh. React admin dashboard + React Native app for parents and teachers, on Firebase Auth, Firestore, and Cloud Messaging. Replaced paper-based workflows; heading to Google Play.</p>
+      <div class="meta"><div class="tags"><span class="tag">React Native</span><span class="tag">Firebase</span><span class="tag">In Testing</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="ai full" href="https://github.com/Arnobrizwan/nexusvision-mlops" target="_blank" rel="noopener">
+      <span class="ct">Computer Vision · MLOps</span>
+      <h3>NexusVision MLOps</h3>
+      <p>Smart-factory computer vision inspection platform with a full MLOps lifecycle dashboard — defect detection plus model training, deployment, and monitoring in one system.</p>
+      <div class="meta"><div class="tags"><span class="tag">Python</span><span class="tag">CV</span><span class="tag">MLOps</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/AI-Hud-Challenge" target="_blank" rel="noopener">
+      <span class="ct">Production ML · Live</span>
+      <h3>AI News HUD</h3>
+      <p>Real-time news intelligence — PyTorch models for classification, summarization, and personalized ranking, the same system I worked on under contract for a US platform. Deployed on Vercel.</p>
+      <div class="meta"><div class="tags"><span class="tag">PyTorch</span><span class="tag">NLP</span><span class="tag">Vercel</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="agents" href="https://github.com/Arnobrizwan/Voice-Enabled-Browser-Agent" target="_blank" rel="noopener">
+      <span class="ct">Agents · Voice</span>
+      <h3>Voice Browser Agent</h3>
+      <p>A browser agent you talk to — voice commands drive real web navigation and task automation end-to-end, built in TypeScript.</p>
+      <div class="meta"><div class="tags"><span class="tag">TypeScript</span><span class="tag">Voice AI</span><span class="tag">Automation</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="agents" href="https://github.com/Arnobrizwan/Terminal-Based-Coding-Agent" target="_blank" rel="noopener">
+      <span class="ct">Agents · DevTools</span>
+      <h3>Terminal Coding Agent</h3>
+      <p>An autonomous coding agent that lives in your terminal — reads, writes, and edits codebases from natural-language instructions.</p>
+      <div class="meta"><div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">CLI</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/Self-Improving-Prompt-Optimization-Api" target="_blank" rel="noopener">
+      <span class="ct">LLM Infra</span>
+      <h3>Self-Improving Prompt API</h3>
+      <p>An API that optimizes its own prompts — closed-loop evaluation scores outputs and iteratively rewrites prompts to climb the quality curve.</p>
+      <div class="meta"><div class="tags"><span class="tag">Python</span><span class="tag">Evals</span><span class="tag">FastAPI</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/Image-Style-Transfer-with-WebAssembly" target="_blank" rel="noopener">
+      <span class="ct">ML × WASM</span>
+      <h3>Style Transfer in WASM</h3>
+      <p>Neural style transfer running fully in the browser — ONNX models compiled to WebAssembly, no server-side inference at all.</p>
+      <div class="meta"><div class="tags"><span class="tag">WebAssembly</span><span class="tag">ONNX</span><span class="tag">TypeScript</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/my-llm-router" target="_blank" rel="noopener">
+      <span class="ct">LLM Infra</span>
+      <h3>LLM Router</h3>
+      <p>Smart routing layer that sends each request to the right model by cost, latency, and capability — one API in front of many LLMs.</p>
+      <div class="meta"><div class="tags"><span class="tag">TypeScript</span><span class="tag">Routing</span><span class="tag">Multi-Model</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="agents ai" href="https://github.com/Arnobrizwan/Autonomous-ML-Agent" target="_blank" rel="noopener">
+      <span class="ct">AutoML · Agents</span>
+      <h3>Autonomous ML Agent</h3>
+      <p>An agent that runs the ML lifecycle by itself — data prep, model selection, training, and evaluation — with a Docker CI/CD pipeline optimized on GitHub Actions.</p>
+      <div class="meta"><div class="tags"><span class="tag">Python</span><span class="tag">AutoML</span><span class="tag">Docker</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="mobile" href="#contact">
+      <span class="ct">Freelance · Malaysia 🇲🇾</span>
+      <h3>ShopLocalr</h3>
+      <p>Cross-platform Flutter commerce app connecting customers with local businesses — product discovery, vendor onboarding, and order workflows on a real-time Firebase backend. Shipped production-ready to the client.</p>
+      <div class="meta"><div class="tags"><span class="tag">Flutter</span><span class="tag">Firestore</span><span class="tag">Commerce</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="mobile" href="#contact">
+      <span class="ct">Freelance · Bangladesh 🇧🇩</span>
+      <h3>Al-IBADAH</h3>
+      <p>AI-powered Islamic worship companion — personalized prayer reminders, dua recommendations, and Quran study suggestions adaptive to user habits and the Hijri calendar, with a culturally grounded UX.</p>
+      <div class="meta"><div class="tags"><span class="tag">Mobile</span><span class="tag">AI</span><span class="tag">Hijri-Aware</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="mobile ai" href="https://github.com/Arnobrizwan/MediSign-AI" target="_blank" rel="noopener">
+      <span class="ct">Healthcare · AI</span>
+      <h3>MediSign AI</h3>
+      <p>AI-powered healthcare platform in Flutter — bridging communication gaps in medical settings with sign-language-aware tooling on Firebase.</p>
+      <div class="meta"><div class="tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Health</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="full ai" href="https://github.com/Arnobrizwan/intellinote-app" target="_blank" rel="noopener">
+      <span class="ct">Full-Stack · NLP</span>
+      <h3>IntelliNote</h3>
+      <p>Full-stack AI note-taking app — FastAPI + PostgreSQL with NLP for summarization, sentiment analysis, and smart organization.</p>
+      <div class="meta"><div class="tags"><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">NLP</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="full" href="https://github.com/Arnobrizwan/Stocktrade" target="_blank" rel="noopener">
+      <span class="ct">Fintech</span>
+      <h3>StockTrade</h3>
+      <p>TypeScript stock trading platform — live market data, portfolio tracking, and trade execution flows.</p>
+      <div class="meta"><div class="tags"><span class="tag">TypeScript</span><span class="tag">Fintech</span><span class="tag">Real-Time</span></div><span class="arrow">↗</span></div>
+    </a>
+
+    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/Customer-Churn-Prediction-System" target="_blank" rel="noopener">
+      <span class="ct">ML · Analytics</span>
+      <h3>Churn Prediction</h3>
+      <p>End-to-end customer churn prediction system — feature engineering, model training, and evaluation for retention insight.</p>
+      <div class="meta"><div class="tags"><span class="tag">Python</span><span class="tag">Scikit</span><span class="tag">Jupyter</span></div><span class="arrow">↗</span></div>
+    </a>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head reveal">
+    <span class="idx">03</span>
+    <h2>The Stack</h2>
+    <p class="tail">Tools I reach for when something needs to exist by Friday.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-col reveal">
+      <h4>// AI &amp; ML</h4>
+      <ul><li>PyTorch</li><li>AWS Bedrock</li><li>Multi-agent systems</li><li>Model evaluation &amp; A/B testing</li><li>LLM chaining &amp; fine-tuning</li><li>Zapier · n8n · Make</li></ul>
+    </div>
+    <div class="skill-col reveal">
+      <h4>// Backend</h4>
+      <ul><li>FastAPI</li><li>Node.js · Express</li><li>Nuxt.js</li><li>REST APIs · WebSockets</li><li>PostgreSQL · MySQL · DynamoDB</li><li>Neo4j · pgvector</li></ul>
+    </div>
+    <div class="skill-col reveal">
+      <h4>// Frontend &amp; Mobile</h4>
+      <ul><li>React · Next.js</li><li>React Native</li><li>Flutter</li><li>TypeScript</li><li>Tailwind CSS</li><li>Firestore real-time sync</li></ul>
+    </div>
+    <div class="skill-col reveal">
+      <h4>// Cloud &amp; DevOps</h4>
+      <ul><li>AWS — Lambda · Bedrock · DynamoDB · Cognito</li><li>GCP · Firebase</li><li>Docker</li><li>GitHub Actions</li><li>CloudFront · API Gateway</li><li>Vercel</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="creds">
+  <div class="sec-head reveal">
+    <span class="idx">04</span>
+    <h2>Receipts</h2>
+    <p class="tail">Education, certifications, and the program that started it all.</p>
+  </div>
+  <div class="creds">
+    <div class="cred reveal">
+      <div class="k">Education</div>
+      <h4>Universiti Teknologi Malaysia</h4>
+      <p>Bachelor of Software Engineering — Johor Bahru. Expected July 2026.</p>
+    </div>
+    <div class="cred reveal">
+      <div class="k">Certification · Mar 2025</div>
+      <h4>AWS — SageMaker, LLMs &amp; Prompt Engineering</h4>
+      <p>Amazon SageMaker, Large Language Models, and Prompt Engineering certifications.</p>
+    </div>
+    <div class="cred reveal">
+      <div class="k">Certification · Jun 2024</div>
+      <h4>Microsoft Azure AI</h4>
+      <p>Azure OpenAI Service, Natural Language Processing, and Document Intelligence.</p>
+    </div>
+    <div class="cred reveal">
+      <div class="k">Achievement</div>
+      <h4>Headstarter SWE Resident</h4>
+      <p>Selected for a competitive 6-month US-based engineering residency — shipped 14+ ML and full-stack projects.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="kicker reveal">05 /// Got a role, a contract, or a wild idea?</div>
+  <a class="mail reveal" href="mailto:arnobrizwan23@gmail.com">arnobrizwan23<br>@gmail.com ↗</a>
+  <div class="foot-row">
+    <div class="foot-links">
+      <a href="https://github.com/Arnobrizwan" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/arnob-rizwan-033704239/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="tel:+60177260362">+60 17-726 0362</a>
+      <a href="Arnob_Rizwan_Ahmad_Resume.pdf" download>Resume PDF</a>
+    </div>
+    <div class="foot-note">© 2026 Arnob Rizwan Ahmad · Johor Bahru, MY · Built loud on purpose.</div>
+  </div>
+</footer>
+
+<script>
+// custom cursor
+const cur=document.querySelector('.cursor'),ring=document.querySelector('.cursor-ring');
+let rx=0,ry=0,tx=0,ty=0;
+if(matchMedia('(hover:hover)').matches){
+  addEventListener('mousemove',e=>{
+    tx=e.clientX;ty=e.clientY;
+    cur.style.left=tx+'px';cur.style.top=ty+'px';
+  });
+  (function lerp(){rx+=(tx-rx)*.14;ry+=(ty-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerp)})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-grow'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-grow'));
+  });
+}
+
+// scroll reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// stat counters
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;co.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,t0=performance.now(),dur=1400;
+  (function step(t){
+    const p=Math.min((t-t0)/dur,1),v=Math.round(end*(1-Math.pow(1-p,3)));
+    el.textContent=v+(end===14?'+':'');
+    if(p<1)requestAnimationFrame(step);
+  })(t0);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+// project filters
+document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const f=b.dataset.f;
+  document.querySelectorAll('.card').forEach(c=>{
+    c.classList.toggle('hide',f!=='all'&&!c.dataset.cat.split(' ').includes(f));
+  });
+}));
+</script>
+</body>
+</html>
