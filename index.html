@@ -255,14 +255,53 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 .foot-links a:hover{color:var(--acid)}
 .foot-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:#55534a}
 
+/* ---------- 2026 motion layer ---------- */
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px;border:2px solid var(--ink)}
+::-webkit-scrollbar-thumb:hover{background:var(--acid)}
+
+.progress{
+  position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--acid),var(--tang));
+  transform-origin:0 50%;transform:scaleX(0);z-index:9500;pointer-events:none;
+}
+@supports (animation-timeline: scroll()){
+  .progress{animation:prog linear both;animation-timeline:scroll(root)}
+  @keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+
+.hero::before{
+  content:"";position:absolute;width:58vw;height:58vw;max-width:780px;max-height:780px;
+  top:-20%;right:-14%;border-radius:50%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(circle at 30% 30%,rgba(200,247,60,.17),transparent 62%),
+    radial-gradient(circle at 72% 68%,rgba(255,92,26,.11),transparent 60%);
+  filter:blur(58px);
+  animation:aurora 16s ease-in-out infinite alternate;
+}
+@keyframes aurora{
+  from{transform:translate(0,0) rotate(0deg) scale(1)}
+  to{transform:translate(-10%,12%) rotate(45deg) scale(1.18)}
+}
+.hero>*{position:relative;z-index:1}
+
+.sec-head h2{will-change:contents}
+
+.card{transform-style:preserve-3d}
+@keyframes cardin{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+
+.btn,.nav-cta{will-change:transform}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
   html{scroll-behavior:auto}
+  .hero::before{animation:none}
 }
 </style>
 </head>
 <body>
 
+<div class="progress" aria-hidden="true"></div>
 <div class="cursor"></div>
 <div class="cursor-ring"></div>
 
@@ -863,15 +902,75 @@ const co=new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
 
-// project filters
+// project filters (staggered pop-in on switch)
 document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
   b.classList.add('on');
-  const f=b.dataset.f;
+  const f=b.dataset.f;let i=0;
   document.querySelectorAll('.card').forEach(c=>{
-    c.classList.toggle('hide',f!=='all'&&!c.dataset.cat.split(' ').includes(f));
+    const hide=f!=='all'&&!c.dataset.cat.split(' ').includes(f);
+    c.classList.toggle('hide',hide);
+    if(!hide){
+      c.style.animation='none';void c.offsetHeight;
+      c.style.animation=`cardin .45s cubic-bezier(.16,1,.3,1) ${Math.min(i++*0.025,0.5)}s backwards`;
+    }
   });
 }));
+
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+// scroll progress fallback (browsers without animation-timeline)
+if(!CSS.supports('animation-timeline: scroll()')){
+  const bar=document.querySelector('.progress');
+  addEventListener('scroll',()=>{
+    const h=document.documentElement;
+    bar.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight)})`;
+  },{passive:true});
+}
+
+// section header scramble decode
+if(!RM){
+  const GLYPHS='█▓▒░<>/{}[]#%&*+=$@';
+  const so=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;so.unobserve(e.target);
+    const el=e.target,orig=el.textContent;
+    el.style.minWidth=el.offsetWidth+'px';el.style.minHeight=el.offsetHeight+'px';el.style.display='inline-block';
+    let frame=0;const speed=2,total=orig.length*speed+8;
+    (function tick(){
+      el.textContent=[...orig].map((ch,i)=>ch===' '?' ':(i*speed<frame?ch:GLYPHS[Math.random()*GLYPHS.length|0])).join('');
+      if(frame++<total)requestAnimationFrame(tick);
+      else{el.textContent=orig;el.style.minWidth=el.style.minHeight=el.style.display='';}
+    })();
+  }),{threshold:.6});
+  document.querySelectorAll('.sec-head h2').forEach(el=>so.observe(el));
+}
+
+// magnetic buttons
+if(FINE&&!RM){
+  document.querySelectorAll('.btn,.nav-cta').forEach(el=>{
+    el.addEventListener('mousemove',e=>{
+      const r=el.getBoundingClientRect();
+      el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.28}px,${(e.clientY-r.top-r.height/2)*.28}px)`;
+    });
+    el.addEventListener('mouseleave',()=>{el.style.transform=''});
+  });
+}
+
+// 3D tilt on project cards
+if(FINE&&!RM){
+  const grid=document.querySelector('.grid');
+  grid.addEventListener('mousemove',e=>{
+    const card=e.target.closest('.card');if(!card)return;
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(800px) rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*6).toFixed(2)}deg) translateY(-6px)`;
+  });
+  grid.addEventListener('mouseout',e=>{
+    const card=e.target.closest('.card');
+    if(card&&!card.contains(e.relatedTarget))card.style.transform='';
+  });
+}
 </script>
 </body>
 </html>
