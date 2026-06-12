@@ -289,6 +289,9 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 
 .card{transform-style:preserve-3d}
 @keyframes cardin{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+.card.folded{display:none}
+.more-wrap{display:flex;justify-content:center;margin-top:38px}
+.more-btn{cursor:pointer}
 
 .btn,.nav-cta{will-change:transform}
 
@@ -798,6 +801,9 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
   </div>
+  <div class="more-wrap">
+    <button class="btn btn-solid more-btn" type="button">Show 35 more ↓</button>
+  </div>
 </section>
 
 <section id="skills">
@@ -915,7 +921,28 @@ document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
       c.style.animation=`cardin .45s cubic-bezier(.16,1,.3,1) ${Math.min(i++*0.025,0.5)}s backwards`;
     }
   });
+  applyFold();
 }));
+
+// fold the grid to 12 cards until expanded
+const moreBtn=document.querySelector('.more-btn');
+const FOLD=12;let expanded=false;
+function applyFold(){
+  const vis=[...document.querySelectorAll('.card:not(.hide)')];
+  vis.forEach((c,i)=>c.classList.toggle('folded',!expanded&&i>=FOLD));
+  const hidden=expanded?0:Math.max(vis.length-FOLD,0);
+  moreBtn.style.display=hidden?'':'none';
+  if(hidden)moreBtn.textContent=`Show ${hidden} more ↓`;
+}
+moreBtn.addEventListener('click',()=>{
+  expanded=true;let i=0;
+  document.querySelectorAll('.card.folded').forEach(c=>{
+    c.classList.remove('folded');
+    c.style.animation=`cardin .45s cubic-bezier(.16,1,.3,1) ${Math.min(i++*0.02,0.4)}s backwards`;
+  });
+  applyFold();
+});
+applyFold();
 
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
