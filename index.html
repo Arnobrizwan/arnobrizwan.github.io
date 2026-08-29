@@ -195,6 +195,19 @@ section{padding:clamp(60px,10vh,120px) clamp(20px,5vw,64px)}
 }
 .fbtn:hover{border-color:var(--acid);color:var(--acid)}
 .fbtn.on{background:var(--acid);border-color:var(--acid);color:var(--ink);transform:rotate(-2deg)}
+.live-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:20px}
+.live-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:26px;border:1px solid rgba(242,239,230,.14);border-radius:16px;background:linear-gradient(160deg,rgba(200,247,60,.05),rgba(255,92,26,.03));text-decoration:none;transition:transform .35s,border-color .35s,background .35s;overflow:hidden}
+.live-card:hover{transform:translateY(-7px);border-color:var(--acid);background:linear-gradient(160deg,rgba(200,247,60,.12),rgba(255,92,26,.06))}
+.live-badge{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acid)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 0 rgba(200,247,60,.7);animation:livepulse 2s infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(200,247,60,.65)}70%{box-shadow:0 0 0 9px rgba(200,247,60,0)}100%{box-shadow:0 0 0 0 rgba(200,247,60,0)}}
+.live-card h3{font-family:'Unbounded',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;line-height:1.2;margin:0;color:var(--paper)}
+.live-url{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--tang);word-break:break-all}
+.live-card p{color:#bdbaae;font-size:14.5px;line-height:1.6;margin:0;flex:1}
+.live-card .tags{display:flex;gap:7px;flex-wrap:wrap}
+.live-open{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);opacity:.75}
+.live-card:hover .live-open{opacity:1;color:var(--acid)}
+@media(max-width:520px){.live-grid{grid-template-columns:1fr}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
 .card{
   border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:14px;
@@ -319,6 +332,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   <a class="logo" href="#top">ARNOB<em>.</em></a>
   <div class="nav-links">
     <a href="#work">Work</a>
+    <a href="#live">Live</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Stack</a>
     <a href="#contact">Contact</a>
@@ -488,11 +502,74 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   </div>
 </section>
 
-<section id="projects">
+<section id="live">
   <div class="sec-head reveal">
     <span class="idx">02</span>
+    <h2>Live Sites</h2>
+    <p class="tail">Not repos — deployed products you can open right now. Real users, real traffic, real uptime.</p>
+  </div>
+  <div class="live-grid">
+    <a class="live-card reveal" href="https://momsoilchange.com" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live · Client Work · USA 🇺🇸</span>
+      <h3>MOMS Oil Change</h3>
+      <span class="live-url">momsoilchange.com</span>
+      <p>Live production site for a US mobile oil change and fleet maintenance business in Philadelphia. I redesigned the header and navigation, rebuilt three product pages, and led an SEO overhaul — dynamic sitemap, 301 redirects for legacy city URLs, and consolidation onto <code>/locations/[city]</code> dynamic routes.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">SEO</span><span class="tag">Production</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" href="https://bestauto-rentals.vercel.app" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live · Full Platform · 80 Tests</span>
+      <h3>Best Auto Rentals</h3>
+      <span class="live-url">bestauto-rentals.vercel.app</span>
+      <p>Full car rental platform — customer booking flow, functional admin dashboard, a provider-agnostic AI concierge with output validation, and an event-driven automation engine. 80 automated tests across 20 suites, with CSP, HSTS and Permissions-Policy headers in production.</p>
+      <div class="tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Neon Postgres</span><span class="tag">Drizzle</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" href="https://hud-news.vercel.app" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live · AI · News Intelligence</span>
+      <h3>AI News HUD</h3>
+      <span class="live-url">hud-news.vercel.app</span>
+      <p>A heads-up display for the internet — pulls HackerNews, AI newsletters, subreddits and X, dedupes the noise, and ranks for what is actually breaking. Built on Next.js 16 and Convex with real-time updates.</p>
+      <div class="tags"><span class="tag">Next.js 16</span><span class="tag">Convex</span><span class="tag">TypeScript</span><span class="tag">Real-time</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" href="https://photonixresearch.com" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live · Client Work · Research</span>
+      <h3>PhotoniX Research</h3>
+      <span class="live-url">photonixresearch.com</span>
+      <p>Production website for a photonics and laser research group — research areas, publications, team profiles, news and recruitment, with a motion-driven front end.</p>
+      <div class="tags"><span class="tag">Web</span><span class="tag">Motion UI</span><span class="tag">Production</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" href="https://jobportal-blush.vercel.app" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live · Full-Stack · Product</span>
+      <h3>JobPortal</h3>
+      <span class="live-url">jobportal-blush.vercel.app</span>
+      <p>Job application platform with company profiles, job listings, a candidate leaderboard and a blog — built to make the application journey measurable rather than a black box.</p>
+      <div class="tags"><span class="tag">Full-Stack</span><span class="tag">React</span><span class="tag">Vercel</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" href="https://mentorminds-admin.vercel.app" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live · Dashboard · Thesis Project</span>
+      <h3>MentorMinds Admin</h3>
+      <span class="live-url">mentorminds-admin.vercel.app</span>
+      <p>Admin console for the MentorMinds EdTech platform — authenticated dashboard for managing content, users and the AI tutoring pipeline behind my final-year thesis project.</p>
+      <div class="tags"><span class="tag">Admin</span><span class="tag">Auth</span><span class="tag">EdTech</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-head reveal">
+    <span class="idx">03</span>
     <h2>Projects</h2>
-    <p class="tail">48 projects pulled from 93 repos, audited at the code level — AI, agents, mobile, and full-stack. From production systems serving real users to the early builds that started it all.</p>
+    <p class="tail">The full archive — 48 projects pulled from 93 repos, audited at the code level. AI, agents, mobile, and full-stack, from production systems to the early builds that started it all.</p>
   </div>
   <div class="filters reveal">
     <button class="fbtn on" data-f="all">All</button>
@@ -847,7 +924,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 
 <section id="skills">
   <div class="sec-head reveal">
-    <span class="idx">03</span>
+    <span class="idx">04</span>
     <h2>The Stack</h2>
     <p class="tail">Tools I reach for when something needs to exist by Friday.</p>
   </div>
@@ -873,7 +950,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 
 <section id="creds">
   <div class="sec-head reveal">
-    <span class="idx">04</span>
+    <span class="idx">05</span>
     <h2>Receipts</h2>
     <p class="tail">Education, certifications, and the program that started it all.</p>
   </div>
