@@ -198,6 +198,13 @@ section{padding:clamp(60px,10vh,120px) clamp(20px,5vw,64px)}
 .live-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:20px}
 .live-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:26px;border:1px solid rgba(242,239,230,.14);border-radius:16px;background:linear-gradient(160deg,rgba(200,247,60,.05),rgba(255,92,26,.03));text-decoration:none;transition:transform .35s,border-color .35s,background .35s;overflow:hidden}
 .live-card:hover{transform:translateY(-7px);border-color:var(--acid);background:linear-gradient(160deg,rgba(200,247,60,.12),rgba(255,92,26,.06))}
+.live-badge.is-app{color:var(--tang)}
+.live-badge.is-app .live-dot{background:var(--tang);animation:apppulse 2s infinite}
+@keyframes apppulse{0%{box-shadow:0 0 0 0 rgba(255,92,26,.6)}70%{box-shadow:0 0 0 9px rgba(255,92,26,0)}100%{box-shadow:0 0 0 0 rgba(255,92,26,0)}}
+.live-card.no-link{cursor:default}
+.live-card.no-link:hover{transform:none;border-color:rgba(242,239,230,.14);background:linear-gradient(160deg,rgba(200,247,60,.05),rgba(255,92,26,.03))}
+.live-dl{display:flex;gap:10px;flex-wrap:wrap}
+.live-dl span{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(242,239,230,.25);border-radius:100px;padding:5px 12px;color:var(--paper)}
 .live-badge{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acid)}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 0 rgba(200,247,60,.7);animation:livepulse 2s infinite}
 @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(200,247,60,.65)}70%{box-shadow:0 0 0 9px rgba(200,247,60,0)}100%{box-shadow:0 0 0 0 rgba(200,247,60,0)}}
@@ -505,8 +512,8 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 <section id="live">
   <div class="sec-head reveal">
     <span class="idx">02</span>
-    <h2>Live Sites</h2>
-    <p class="tail">Not repos — deployed products you can open right now. Real users, real traffic, real uptime.</p>
+    <h2>Live Projects</h2>
+    <p class="tail">Not repos — shipped products. Sites you can open right now and apps you can install on your phone.</p>
   </div>
   <div class="live-grid">
     <a class="live-card reveal" href="https://momsoilchange.com" target="_blank" rel="noopener">
@@ -554,14 +561,34 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-open">Visit site ↗</span>
     </a>
 
-    <a class="live-card reveal" href="https://mentorminds-admin.vercel.app" target="_blank" rel="noopener">
-      <span class="live-badge"><span class="live-dot"></span>Live · Dashboard · Thesis Project</span>
-      <h3>MentorMinds Admin</h3>
-      <span class="live-url">mentorminds-admin.vercel.app</span>
-      <p>Admin console for MentorMinds, the AI tutoring platform built as my final-year thesis — authenticated dashboard sitting behind the student-facing app. Sign-in required.</p>
-      <div class="tags"><span class="tag">Admin</span><span class="tag">Auth</span><span class="tag">EdTech</span></div>
-      <span class="live-open">Visit site ↗</span>
+
+    <a class="live-card reveal" href="https://github.com/Arnobrizwan/ZeroWaste-Hub/releases/tag/v1.0.0" target="_blank" rel="noopener">
+      <span class="live-badge is-app"><span class="live-dot"></span>Installable App · Android + iOS</span>
+      <h3>ZeroWaste Hub</h3>
+      <span class="live-url">Signed APK &amp; IPA on GitHub Releases</span>
+      <p>Food-rescue app for Malaysia connecting donors, recipients and volunteer riders — Gemini vision grades dish quality and halal status, an on-device TFLite classifier caches its own model, with Checkout.com / TNG eWallet payments and four languages.</p>
+      <div class="live-dl"><span>↓ APK · 79 MB</span><span>↓ iOS IPA · 25 MB</span></div>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">Gemini Vision</span><span class="tag">TFLite</span></div>
+      <span class="live-open">Download build ↗</span>
     </a>
+
+    <div class="live-card reveal no-link">
+      <span class="live-badge is-app"><span class="live-dot"></span>In Production · Client App</span>
+      <h3>ShopLocalr</h3>
+      <span class="live-url">Private client deployment · Malaysia</span>
+      <p>A 33,000-line Flutter local-business discovery app with customer, business and admin roles — QR deal redemption with checkout PINs, Gemini-backed recommendations, and offline-first Hive caching on a Firebase backend.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Gemini</span><span class="tag">Hive</span></div>
+      <span class="live-open">Client deployment — no public link</span>
+    </div>
+
+    <div class="live-card reveal no-link">
+      <span class="live-badge is-app"><span class="live-dot"></span>In Production · 40 Schools</span>
+      <h3>School Care App</h3>
+      <span class="live-url">Private distribution · Play Store closed testing</span>
+      <p>School management system in daily use across 40 schools in Sylhet, Bangladesh — a React admin dashboard plus a React Native app for parents and teachers, with Cloud Functions fanning out role-targeted push notifications by school, role and class.</p>
+      <div class="tags"><span class="tag">React Native</span><span class="tag">React</span><span class="tag">Firebase</span><span class="tag">FCM</span></div>
+      <span class="live-open">Client deployment — no public link</span>
+    </div>
   </div>
 </section>
 
