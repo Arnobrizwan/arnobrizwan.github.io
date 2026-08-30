@@ -329,6 +329,37 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   html{scroll-behavior:auto}
   .hero::before{animation:none}
 }
+
+
+/* ---------- responsive: md (tablet) ---------- */
+@media(max-width:1024px){
+  html{overflow-x:hidden;max-width:100%}
+  .live-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .skills-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+
+/* ---------- responsive: sm (phone) ---------- */
+@media(max-width:640px){
+  html,body{overflow-x:hidden;max-width:100%}
+  .grid,.live-grid,.skills-grid{grid-template-columns:1fr;gap:14px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  section{padding:56px 18px}
+  .hero{padding:40px 18px 48px}
+  nav{padding:14px 18px}
+  .card{padding:20px}
+  .live-card{padding:20px}
+  .sec-head{gap:10px;margin-bottom:30px}
+  .skill-marquee{margin:44px 0}
+  .xp-tags{gap:6px}
+  .tags{gap:6px}
+}
+
+@media(max-width:340px){
+  .stats{grid-template-columns:1fr}
+  .card,.live-card{padding:17px}
+}
 </style>
 </head>
 <body>
