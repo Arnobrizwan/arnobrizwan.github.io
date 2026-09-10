@@ -555,6 +555,32 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <p class="tail">Not repos — shipped products. Sites you can open right now and apps you can install on your phone.</p>
   </div>
   <div class="live-grid">
+    <div class="live-card reveal no-link">
+      <span class="live-badge"><span class="live-dot"></span>Assessment Build &middot; Retool + Postgres &middot; 🔒 No public link</span>
+      <h3>Ambient Ops Triage Workbench</h3>
+      <span class="live-url">Retool app + workflow &middot; private repo, reviewer access only</span>
+      <p>A keyboard-only operations triage workbench in Retool over Postgres, and the data forensics behind it. Handed a quarterly quality memo and a replica schema, the audit found the memo&rsquo;s SQL was correct and its answer was not: rows were one per ingestion rather than one per note, a type-2 employee dimension fanned out every join, two different people shared a name and were silently merged by a <code>GROUP BY</code>, and an effective-dated rubric and SLA both changed on the same day, moving the pass rate in opposite directions. 149 &ldquo;open&rdquo; escalations turned out to be 43 rows stranded by a rate-limited batch job with no retry. The workbench commits a decision in three keystrokes, restores selection, filter, sort and scroll across a refresh, and cold-loads in under ten seconds off a materialised view. The recovery workflow claims rows under a lease guarded by a partial unique index and retries with full-jitter backoff, with the dead-letter path exercised by a forced-failure endpoint. 54 tests, CI green, and a gate that diffs the shipped bundle against its source.</p>
+      <div class="tags"><span class="tag">Retool</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span><span class="tag">SQL Forensics</span><span class="tag">Workflows</span></div>
+    </div>
+
+    <a class="live-card reveal" href="https://taghyeer-chat-rust.vercel.app/app" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live &middot; Real-Time &middot; Offline-First</span>
+      <h3>Relay</h3>
+      <span class="live-url">taghyeer-chat-rust.vercel.app</span>
+      <p>Real-time direct and group chat on Next.js, with an offline outbox that survives a reload. Every wire shape is normalised at one network boundary so no component ever sees the raw API, sends go over REST rather than the socket because the socket ack carries no body to reconcile against, and tabs signed in as the same user stay in sync over <code>BroadcastChannel</code> and <code>navigator.locks</code>. The backend sleeps on a free tier, so the landing page starts waking it while you read and a slow request shows a counter instead of an unexplained spinner. 91 unit tests, clean lint and type check.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Socket.io</span><span class="tag">TanStack Query</span><span class="tag">Zustand</span></div>
+      <span class="live-open">Open the app ↗</span>
+    </a>
+
+    <a class="live-card reveal" href="https://stocktrade-topaz.vercel.app" target="_blank" rel="noopener">
+      <span class="live-badge"><span class="live-dot"></span>Live &middot; Local LLM &middot; No Login</span>
+      <h3>StockTrade</h3>
+      <span class="live-url">stocktrade-topaz.vercel.app</span>
+      <p>A stock social platform where community posts are scored for insight quality and reputation-weighted sentiment aggregates into a per-ticker Smart Signal, with sentiment run through a local LLM over Ollama rather than a paid API. Yahoo Finance blocks server and CI traffic and sends no CORS headers, so rather than dress that up as live data the app falls back to a timestamped snapshot and says so in a banner, with <code>/api/meta</code> reporting which mode is active. The news feed and the signals aggregator still run live. Every dependency degrades instead of crashing when it is missing.</p>
+      <div class="tags"><span class="tag">Next.js 16</span><span class="tag">Prisma</span><span class="tag">Ollama</span><span class="tag">Clerk</span><span class="tag">RSS</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
     <a class="live-card reveal" href="https://ffgamerbd.com" target="_blank" rel="noopener">
       <span class="live-badge"><span class="live-dot"></span>Live · Client Work · Bangladesh 🇧🇩</span>
       <h3>FF Gamer BD</h3>
