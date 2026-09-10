@@ -1,0 +1,148 @@
+{
+  "_comment": "Live content for the Support Welfare Companies app. Editing this file changes the app's category list, criteria wording, links and donation id on the next launch, with no new release. The app validates everything: a malformed block is ignored and the bundled defaults stand. Served from https://arnobrizwan.github.io/support-welfare/config.json until the Firestore rule for config/app can be deployed on the project owner's account, at which point config/app takes precedence automatically.",
+  "version": 1,
+  "updatedAt": "2026-09-10",
+
+  "adsEnabled": true,
+  "scoreThreshold": 3.0,
+  "noticeText": "",
+  "noticeUrl": "",
+
+  "instagramUrl": "https://www.instagram.com/welfare1770?igsi=MWp1NWxiZGQ2cWR1cw==",
+  "facebookUrl": "https://www.facebook.com/profile.php?id=61589529568602",
+  "surveyFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeA6guQJZiUlrabH74UoQjbtRiGLHl-8mf3yWV2-8qstxYkJw/viewform",
+  "donationUid": "1690797972",
+  "supportEmail": "arnobrizwan23@gmail.com",
+
+  "categories": [
+    { "id": "construction", "label": "Construction and real estate", "emoji": "🏗️" },
+    { "id": "health", "label": "Hospitals and clinics", "emoji": "🏥" },
+    { "id": "education", "label": "Schools and centers", "emoji": "🏫" },
+    { "id": "restaurants", "label": "Restaurants", "emoji": "🍽️" },
+    { "id": "finance", "label": "Banks, insurance, exchange and brokerage", "emoji": "🏦" },
+    { "id": "retail", "label": "Retail and online shopping", "emoji": "🛒" },
+    { "id": "clothes", "label": "Clothes", "emoji": "👕" },
+    { "id": "farms", "label": "Farms", "emoji": "🚜" },
+    { "id": "appliances", "label": "Home appliances", "emoji": "🔌" },
+    { "id": "public", "label": "Public firms", "emoji": "🏛️" },
+    { "id": "international", "label": "International companies", "emoji": "🌍" },
+    { "id": "heavy", "label": "Heavy industries", "emoji": "🏭" },
+    { "id": "tech", "label": "Communication, software and hardware", "emoji": "💻" },
+    { "id": "petrochemicals", "label": "Petrochemicals and fertelizers", "emoji": "🛢️" },
+    { "id": "tourism", "label": "Tourism and hotels", "emoji": "🏨" },
+    { "id": "transport", "label": "Cars and transportation", "emoji": "🚗" },
+    { "id": "admin", "label": "Administrative offices", "emoji": "🗄️" },
+    { "id": "other", "label": "Other", "emoji": "📦" }
+  ],
+
+  "criteria": [
+    {
+      "id": "wage",
+      "number": 1,
+      "title": "Fair minimum wage\n(Overload - Required qualification)",
+      "icon": "payments",
+      "tint": "#16A34A",
+      "items": [
+        { "short": "Gives minimum wage" },
+        {
+          "short": "Overload gives 1.5 minimum wage",
+          "detail": [
+            "Overload carry heavy goods more than 10 kg",
+            "Long stand up over 4 hrs",
+            "Hot or cold work conditions",
+            "Dangerous work",
+            "Work more than job description"
+          ]
+        },
+        {
+          "short": "Required qualification gives 1.5 minimum wage",
+          "detail": [
+            "1.5x for jobs that need a university graduate with 5 years experience, or a technician with 10 years experience",
+            "2x for jobs that need a university graduate with 10 years experience, or a technician with 20 years experience",
+            "3x for jobs that need a university graduate with 20 years experience as a manager, academic or doctor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "profitshare",
+      "number": 2,
+      "title": "(Profitshare)",
+      "icon": "pie_chart",
+      "tint": "#7C3AED",
+      "items": [
+        { "short": "Gives any profitshare or stocks" },
+        { "short": "Gives profitshare for minimum 10%" },
+        {
+          "short": "Gives profitshare maximum of 10%",
+          "detail": [
+            "1% of profit for every job if it requires less than 10 employees",
+            "1 from thousand of profit for every job if it requires less than 100 employees"
+          ]
+        },
+        {
+          "short": "Intellectual property",
+          "detail": [
+            "10% of income for all patents",
+            "10% of profit for designs",
+            "5% of profit for marketing",
+            "1% of profit for marketing ideas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hours",
+      "number": 3,
+      "title": "Working hours (overtime)",
+      "icon": "schedule",
+      "tint": "#2563EB",
+      "items": [
+        { "short": "8 hours" },
+        { "short": "Minimum 6 days off work in a month" },
+        { "short": "Overtime the hour by 1.5 for maximum 12 hours" },
+        {
+          "short": "Only work 6 hrs a day or 4 days a week",
+          "detail": ["Or five days and one day online, as AI will reduce working time"]
+        }
+      ]
+    },
+    {
+      "id": "discrimination",
+      "number": 4,
+      "title": "Discrimination in work force",
+      "icon": "groups",
+      "tint": "#E11D48",
+      "items": [
+        { "short": "Employs 5% of special needs" },
+        { "short": "Employs 20% minimum for women or men" },
+        { "short": "Employs 20% minimum for older people than 40 years" },
+        {
+          "short": "Employs immigrants",
+          "detail": [
+            "Minimum 5% and maximum 10% in poor countries",
+            "Minimum 10% and maximum 20% in middle income countries",
+            "Minimum 20% and maximum 50% in rich countries"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "insurance",
+      "number": 5,
+      "title": "Insurance, securities and pensions",
+      "icon": "health",
+      "tint": "#0D9488",
+      "items": [
+        { "short": "Pays social security up to retirement age of 60 years" },
+        { "short": "Pays health care" },
+        {
+          "short": "AI pensions",
+          "detail": [
+            "10% of the profit of automation, for early retirement over 40 years due to automation"
+          ]
+        }
+      ]
+    }
+  ]
+}
