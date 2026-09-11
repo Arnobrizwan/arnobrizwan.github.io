@@ -714,105 +714,105 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   <div class="sec-head reveal">
     <span class="idx">03</span>
     <h2>Applied LLM Systems</h2>
-    <p class="tail">Fifteen systems an AI engineer actually gets asked to build &mdash; retrieval, evaluation, guardrails, routing, agents. One repo, 494 tests, and it runs on your laptop with no API key. <a href="https://github.com/Arnobrizwan/applied-llm-systems" target="_blank" rel="noopener">github.com/Arnobrizwan/applied-llm-systems</a></p>
+    <p class="tail">Fifteen systems an AI engineer actually gets asked to build &mdash; retrieval, evaluation, guardrails, routing, agents. <strong>Every one is hosted and interactive</strong>: open a card, type your own input, and the real code runs and shows you its actual output. 494 tests, no API key anywhere. <a href="https://applied-llm-systems.vercel.app" target="_blank" rel="noopener">applied-llm-systems.vercel.app</a> &middot; <a href="https://github.com/Arnobrizwan/applied-llm-systems" target="_blank" rel="noopener">source</a></p>
   </div>
 
-  <a class="live-card reveal" href="https://github.com/Arnobrizwan/applied-llm-systems" target="_blank" rel="noopener" style="margin-bottom:20px">
-    <span class="live-badge"><span class="live-dot"></span>Open Source &middot; 494 Tests &middot; Zero Paid APIs</span>
+  <a class="live-card reveal" href="https://applied-llm-systems.vercel.app" target="_blank" rel="noopener" style="margin-bottom:20px">
+    <span class="live-badge"><span class="live-dot"></span>Live &middot; 15 Interactive Demos &middot; 494 Tests &middot; Zero Paid APIs</span>
     <h3>applied-llm-systems</h3>
-    <span class="live-url">github.com/Arnobrizwan/applied-llm-systems</span>
+    <span class="live-url">applied-llm-systems.vercel.app &middot; github.com/Arnobrizwan/applied-llm-systems</span>
     <p>Fifteen production-shaped LLM systems in one codebase, sharing a dependency-free core: providers, embeddings, BM25, a vector store, token accounting, tracing and retry. Every demo and every test runs offline on a stock Python install &mdash; no key, no quota, nothing to expire &mdash; and a CI gate fails the build if any runtime file imports a third-party package. The default model is a deterministic offline reference implementation that can be told to corrupt a fixed share of its responses, which is how the schema-repair and guardrail paths are measured rather than asserted. Point one environment variable at Ollama or any OpenAI-compatible endpoint and the same code runs against a real model.</p>
     <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Evals</span><span class="tag">Agents</span><span class="tag">Guardrails</span><span class="tag">Observability</span></div>
-    <span class="live-open">View the repo ↗</span>
+    <span class="live-open">Open the live demos ↗</span>
   </a>
 
   <div class="grid">
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p01_rag_pipeline" target="_blank" rel="noopener">
-      <span class="ct">System 01 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/rag-pipeline" target="_blank" rel="noopener">
+      <span class="ct">System 01 &middot; Live &middot; Run it now</span>
       <h3>Production RAG Pipeline</h3>
       <p>Ingestion, chunking, hybrid BM25 + vector search fused with reciprocal rank fusion, reranking, and answers where every citation is validated against a retrieved chunk before it ships. Reranking lifted recall@1 from 0.67 to 0.93 and MRR to 0.967.</p>
       <div class="meta"><div class="tags"><span class="tag">Hybrid Search</span><span class="tag">RRF</span><span class="tag">Citations</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p02_structured_output" target="_blank" rel="noopener">
-      <span class="ct">System 02 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/structured-output" target="_blank" rel="noopener">
+      <span class="ct">System 02 &middot; Live &middot; Run it now</span>
       <h3>Structured Output Engine</h3>
       <p>A JSON Schema validator, extractor and repair chain written from scratch, with validation errors fed back into the retry. With every response deliberately corrupted, success went from 50% at one attempt to 88% at three, half of it repaired locally with no second model call.</p>
       <div class="meta"><div class="tags"><span class="tag">JSON Schema</span><span class="tag">Repair</span><span class="tag">Retries</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p03_context_assembly" target="_blank" rel="noopener">
-      <span class="ct">System 03 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/context-assembly" target="_blank" rel="noopener">
+      <span class="ct">System 03 &middot; Live &middot; Run it now</span>
       <h3>Context Assembly Service</h3>
       <p>Token budgeting across memory, documents, tools and history, with per-section minimums, compression strategies and a reserved completion budget. Naive concatenation overran an 800-token window by 426 tokens; the assembler overflowed none and kept every high-priority source.</p>
       <div class="meta"><div class="tags"><span class="tag">Token Budget</span><span class="tag">Compression</span><span class="tag">Receipts</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p04_eval_harness" target="_blank" rel="noopener">
-      <span class="ct">System 04 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/eval-harness" target="_blank" rel="noopener">
+      <span class="ct">System 04 &middot; Live &middot; Run it now</span>
       <h3>LLM Evaluation Harness</h3>
       <p>Golden dataset, deterministic scorers, a rubric and pairwise LLM judge, bootstrap confidence intervals, and a CI gate that blocks a merge on regression. Pairwise judging showed 78.3% position bias, so those verdicts are recorded as ties rather than trusted.</p>
       <div class="meta"><div class="tags"><span class="tag">LLM-as-Judge</span><span class="tag">Bootstrap CI</span><span class="tag">CI Gate</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p05_semantic_cache" target="_blank" rel="noopener">
-      <span class="ct">System 05 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/semantic-cache" target="_blank" rel="noopener">
+      <span class="ct">System 05 &middot; Live &middot; Run it now</span>
       <h3>Semantic Cache Layer</h3>
       <p>An embedding cache with TTL, LRU eviction and namespace isolation. The paraphrase and near-miss sets turned out not to be separable by any threshold, so a salience guard compares numbers, entities and negations: it removed all five false hits without losing a real one.</p>
       <div class="meta"><div class="tags"><span class="tag">Embeddings</span><span class="tag">Cache Safety</span><span class="tag">LRU</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p06_model_router" target="_blank" rel="noopener">
-      <span class="ct">System 06 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/model-router" target="_blank" rel="noopener">
+      <span class="ct">System 06 &middot; Live &middot; Run it now</span>
       <h3>Model Routing Gateway</h3>
       <p>Complexity scoring across explainable features, three tiers, per-tenant overrides, budget guards and a circuit-broken fallback chain. 55.7% cheaper than always-large across 44 requests, and it served all 44 through a total outage of the top tier.</p>
       <div class="meta"><div class="tags"><span class="tag">Routing</span><span class="tag">Cost Control</span><span class="tag">Circuit Breaker</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p07_multi_tenant_api" target="_blank" rel="noopener">
-      <span class="ct">System 07 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/multi-tenant-api" target="_blank" rel="noopener">
+      <span class="ct">System 07 &middot; Live &middot; Run it now</span>
       <h3>Multi-Tenant LLM API</h3>
       <p>Salted-hash API keys, token-bucket rate limits, reserve-then-reconcile token budgets and namespaced storage, served over plain http.server. A cross-tenant read returns a byte-identical 404 to a fictional id, so the API is not an existence oracle.</p>
       <div class="meta"><div class="tags"><span class="tag">Multi-Tenancy</span><span class="tag">Quotas</span><span class="tag">Isolation</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p08_finetuning_pipeline" target="_blank" rel="noopener">
-      <span class="ct">System 08 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/finetuning-pipeline" target="_blank" rel="noopener">
+      <span class="ct">System 08 &middot; Live &middot; Run it now</span>
       <h3>Fine-Tuning Pipeline</h3>
       <p>Synthetic data generation, dedupe and stratified splits, then LoRA implemented from scratch: frozen base weights, a trained low-rank pair, alpha/r scaling and a merge. 1,048 trained parameters against 1,542 for a full fine-tune, at the same accuracy.</p>
       <div class="meta"><div class="tags"><span class="tag">LoRA</span><span class="tag">From Scratch</span><span class="tag">Benchmarks</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p09_agent_memory" target="_blank" rel="noopener">
-      <span class="ct">System 09 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/agent-memory" target="_blank" rel="noopener">
+      <span class="ct">System 09 &middot; Live &middot; Run it now</span>
       <h3>Agent Memory System</h3>
       <p>Working, episodic and semantic memory with summarisation on overflow, contradiction handling that supersedes rather than deletes, and decay-based eviction. A fact stated at turn 2 is still recalled at turn 32 inside a 300-token budget where the baseline fails.</p>
       <div class="meta"><div class="tags"><span class="tag">Memory</span><span class="tag">Compression</span><span class="tag">Eviction</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p10_guardrails" target="_blank" rel="noopener">
-      <span class="ct">System 10 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/guardrails" target="_blank" rel="noopener">
+      <span class="ct">System 10 &middot; Live &middot; Run it now</span>
       <h3>Guardrails Middleware</h3>
       <p>Weighted injection detection, reversible PII redaction with Luhn-checked card numbers and Bangladeshi and Malaysian phone formats, output filters and a policy engine that records which rule fired. 140 PII decisions with no false positives or negatives, at 0.1ms overhead.</p>
       <div class="meta"><div class="tags"><span class="tag">PII</span><span class="tag">Injection</span><span class="tag">Policy</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p11_streaming" target="_blank" rel="noopener">
-      <span class="ct">System 11 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/streaming" target="_blank" rel="noopener">
+      <span class="ct">System 11 &middot; Live &middot; Run it now</span>
       <h3>Streaming Response Infrastructure</h3>
       <p>Server-sent events with heartbeats, bounded-queue backpressure under real TCP flow control, cancellation, and Last-Event-ID resume. A connection killed mid-stream resumes to 277 contiguous ids with zero duplicates and no regeneration.</p>
       <div class="meta"><div class="tags"><span class="tag">SSE</span><span class="tag">Backpressure</span><span class="tag">Resume</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p12_prompt_registry" target="_blank" rel="noopener">
-      <span class="ct">System 12 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/prompt-registry" target="_blank" rel="noopener">
+      <span class="ct">System 12 &middot; Live &middot; Run it now</span>
       <h3>Prompt Versioning and A/B</h3>
       <p>Content-hash versions, environment labels, hash-based sticky traffic splitting, outcome tracking and a two-proportion z-test promotion gate written in pure Python. It refused to promote at n=40 despite a significant p-value, then promoted at n=600.</p>
       <div class="meta"><div class="tags"><span class="tag">Versioning</span><span class="tag">A/B Testing</span><span class="tag">Rollback</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p13_observability" target="_blank" rel="noopener">
-      <span class="ct">System 13 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/observability" target="_blank" rel="noopener">
+      <span class="ct">System 13 &middot; Live &middot; Run it now</span>
       <h3>LLM Observability Stack</h3>
       <p>Nested tracing with token, latency and cost attribution, privacy-safe capture, EWMA anomaly detection and alert cooldown. Seven alert events became three pages, no span carried raw prompt text, and 36% of calls turned out to be 98% of the bill.</p>
       <div class="meta"><div class="tags"><span class="tag">Tracing</span><span class="tag">Cost</span><span class="tag">Alerting</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p14_tool_calling" target="_blank" rel="noopener">
-      <span class="ct">System 14 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/tool-calling" target="_blank" rel="noopener">
+      <span class="ct">System 14 &middot; Live &middot; Run it now</span>
       <h3>Tool-Calling Framework</h3>
       <p>Schemas derived from type hints, a discoverable registry, argument coercion, per-tool circuit breakers and sandboxed execution with a safe AST evaluator. Twelve sandbox escape attempts rejected, including dunder walks and huge exponents, with real arithmetic still working.</p>
       <div class="meta"><div class="tags"><span class="tag">Tool Use</span><span class="tag">Sandboxing</span><span class="tag">Schemas</span></div><span class="arrow">↗</span></div>
     </a>
-    <a class="card reveal" data-cat="ai" href="https://github.com/Arnobrizwan/applied-llm-systems/tree/main/projects/p15_self_correcting_rag" target="_blank" rel="noopener">
-      <span class="ct">System 15 &middot; Applied LLM</span>
+    <a class="card reveal" data-cat="ai" href="https://applied-llm-systems.vercel.app/s/self-correcting-rag" target="_blank" rel="noopener">
+      <span class="ct">System 15 &middot; Live &middot; Run it now</span>
       <h3>Self-Correcting RAG Agent</h3>
       <p>A bounded loop that rewrites the query, critiques its own retrieval, escalates through a fallback ladder and abstains below a confidence floor. 16 of 19 answerable questions right against 13 single-shot, and it refuses 5 of 8 unanswerable ones instead of inventing an answer.</p>
       <div class="meta"><div class="tags"><span class="tag">Agents</span><span class="tag">Self-Correction</span><span class="tag">Abstention</span></div><span class="arrow">↗</span></div>
