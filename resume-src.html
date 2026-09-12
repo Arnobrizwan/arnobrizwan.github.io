@@ -80,9 +80,11 @@ h2, .entry, li { break-inside: avoid; }
 </div>
 
 <div class="entry">
-<div class="row"><span class="role">Freelance &amp; Contract Engineering</span><span class="date">Sep 2024 &ndash; Jul 2026</span></div>
+<div class="row"><span class="role">Freelance &amp; Contract Engineering</span><span class="date">Sep 2024 &ndash; Present</span></div>
 <div class="sub">Concurrent client and programme work delivered alongside study</div>
 <ul class="tight">
+<li><b>PI STAR</b> (Bangladesh, Sep 2026) &mdash; resolved a total production outage on a Node.js and Express storefront running under Phusion Passenger on cPanel. Every URL returned 503, including static files, so the fault sat in the account and not the app. The process was dying on boot and respawning every two seconds, which held the CloudLinux cage at 100% CPU. I cleared orphaned installs that had exhausted the fork limit, then traced the silent boot failure to a prebuilt <span style="font-family:Consolas,monospace">better-sqlite3</span> binary segfaulting before any JavaScript error could throw, and pinned a self-compiling build to fix it.</li>
+<li><b>FF Gamer BD</b> (Bangladesh, Sep 2026) &mdash; backend integration on a live Laravel 10 and Filament game top-up storefront. Wired in a reseller API as an automated fulfilment provider, then built a payment-gateway integration whose webhook re-verifies every callback against the provider before an order is marked paid. Both came down to the same fault: the checkout path bypassed the storefront's own provider abstraction with hardcoded calls. I audited the product-to-SKU mapping before switching automation on, which caught a duplicate identifier that would have mis-delivered an entire product line.</li>
 <li><b>Framic</b> (remote, Aug 2025 &ndash; Jul 2026, ~10 hrs/week) &mdash; founding backend engineer at an AI storage startup; designed backend services from scratch, owned architecture and core API design, and led AI search and real-time file indexing.</li>
 <li><b>MOMS Mobile Oil Change</b> (USA, Apr &ndash; Jul 2026) &mdash; production Next.js site, live at momsoilchange.com: rebuilt navigation and three product pages, led an SEO overhaul, and ran a site-wide security and dependency audit.</li>
 <li><b>Headstarter</b> (USA, Sep 2024 &ndash; Mar 2025) &mdash; competitive 6-month software engineering residency; shipped ML and full-stack projects end to end, and cut image size and build time on a Docker-based GitHub Actions pipeline.</li>
@@ -90,6 +92,33 @@ h2, .entry, li { break-inside: avoid; }
 </div>
 
 <h2>Selected Projects</h2><div class="entry">
+<div class="row"><span class="role">Support Welfare Companies &mdash; Worker-Welfare Rating App (Google Play)</span><span class="date">Sep 2026</span></div>
+<ul class="tight">
+<li>Shipped a Flutter Android app, live on Google Play, that lets the public rate employers across five worker-welfare criteria, paired with a React and TypeScript reviewer panel that checks each submission against public evidence before it scores.</li>
+<li>Modelled a submission as a claim to be verified rather than a vote to be counted, and blocked ballot-stuffing with Firestore rules that gate every read and write behind an admin check plus a disposable-email blocklist.</li>
+<li>Built with a collaborator on Firebase (Firestore, Auth, AdMob). Source repo private.</li>
+</ul>
+</div>
+
+<div class="entry">
+<div class="row"><span class="role">Ambient Ops Triage Workbench &mdash; Data Forensics &amp; Retool Operations Tool</span><span class="date">Sep 2026</span></div>
+<ul class="tight">
+<li>Handed a quarterly quality memo and a replica schema, found the memo's SQL was correct and its answer was not: rows were one per ingestion rather than one per note, a type-2 employee dimension fanned out every join, two different people shared a name and were silently merged by a GROUP BY, and an effective-dated rubric and SLA both changed on the same day, moving the pass rate in opposite directions.</li>
+<li>Showed that 149 apparently open escalations were 43 rows stranded by a rate-limited batch job with no retry.</li>
+<li>Built the keyboard-only triage workbench on Retool over Postgres: commits a decision in three keystrokes, restores selection, filter, sort and scroll across a refresh, and cold-loads in under ten seconds off a materialised view.</li>
+</ul>
+</div>
+
+<div class="entry">
+<div class="row"><span class="role">Relay &mdash; Real-Time Chat, Offline-First (taghyeer-chat-rust.vercel.app)</span><span class="date">Sep 2026</span></div>
+<ul class="tight">
+<li>Built real-time direct and group chat on Next.js and TypeScript with an offline outbox that survives a reload, normalising every wire shape at one network boundary so no component ever sees the raw API.</li>
+<li>Sent messages over REST rather than the socket because the socket ack carried no body to reconcile against, and kept tabs signed in as the same user in sync over BroadcastChannel and navigator.locks.</li>
+<li>Designed for a free-tier backend that sleeps: the landing page starts waking it while you read, and a slow request shows a counter rather than an unexplained spinner. 91 unit tests, clean lint and type check.</li>
+</ul>
+</div>
+
+<div class="entry">
 <div class="row"><span class="role">Al-Ibadah &mdash; Bangla Islamic Reference Platform (alibadahfoundation.com)</span><span class="date">Sep 2026</span></div>
 <ul class="tight">
 <li>Shipped a Bangla-first Islamic reference site, live at alibadahfoundation.com: the full Quran with five Bangla translations, three tafsirs and ten reciters, 36,432 hadith across 8 collections, duas, and prayer times and qibla for all 64 districts.</li>
@@ -148,10 +177,10 @@ h2, .entry, li { break-inside: avoid; }
 <h2>Technical Skills</h2>
 <div class="skill"><b>ML / AI:</b> PyTorch, scikit-learn, XGBoost, LightGBM, Optuna, SHAP; LLM agents, RAG (FAISS, pgvector), LLM evaluation &amp; blinded judges, prompt engineering, AWS Bedrock, Gemini</div>
 <div class="skill"><b>GPU / ROCm:</b> AMD ROCm stack and HIP programming model (ROCm Certified Associate, 2026)</div>
-<div class="skill"><b>Languages:</b> Python, SQL, TypeScript, JavaScript, C#, Java, Dart</div>
-<div class="skill"><b>Backend:</b> FastAPI, Django + DRF, Node.js, Express, NestJS, ASP.NET Core, Celery, REST APIs, WebSockets</div>
+<div class="skill"><b>Languages:</b> Python, SQL, TypeScript, JavaScript, C#, Java, PHP, Dart</div>
+<div class="skill"><b>Backend:</b> FastAPI, Django + DRF, Node.js, Express, NestJS, ASP.NET Core, Laravel, Celery, REST APIs, WebSockets</div>
 <div class="skill"><b>Frontend &amp; Mobile:</b> React, Next.js, Angular, React Native, Flutter</div>
-<div class="skill"><b>Cloud &amp; Data:</b> AWS, Microsoft Azure, GCP, Docker, Kubernetes, Linux, CI/CD (GitHub Actions, Jenkins); PostgreSQL, MySQL, SQL Server, MongoDB, Redis, ERP modules and SQL tuning on large operational datasets</div>
+<div class="skill"><b>Cloud &amp; Data:</b> AWS, Microsoft Azure, GCP, Docker, Kubernetes, Linux, CI/CD (GitHub Actions, Jenkins); PostgreSQL, MySQL, SQL Server, MongoDB, Redis, Retool, ERP modules and SQL tuning on large operational datasets</div>
 
 <h2>Certifications</h2>
 <ul class="tight">
