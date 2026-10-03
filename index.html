@@ -565,6 +565,14 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-open">Open the tool ↗</span>
     </a>
     <div class="live-card reveal no-link">
+      <span class="live-badge is-app"><span class="live-dot"></span>In Production &middot; Client Work &middot; Malaysia 🇲🇾</span>
+      <h3>ATURRR</h3>
+      <span class="live-url">Private client deployment &middot; staff portal at aturrr.com &middot; Android app in client testing</span>
+      <p>Lead management platform for a Malaysian financing consultancy that matches customers with banks for home, refinance, personal and business financing. I built all three parts: a Flutter customer app with phone sign-in, a React web portal for office staff, referral agents and bankers, and 74 Cloud Functions behind them on Firebase in asia-southeast1. Each role only sees the cases and money it is allowed to see, and that is enforced in Firestore rules, not just hidden in the UI. Staff sign in with TOTP two-factor. Referral commissions run on a tier engine, deals are shared through a vertical video feed with tracked referral links, and policy changes are versioned so customers re-consent on their next visit. The app runs in English, Malay, Tamil and Chinese. To keep running costs low, the in-app assistant is a FAQ bot that hands over to a live agent instead of calling a paid LLM. Six CI jobs gate every merge to main.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore Rules</span><span class="tag">Identity Platform</span></div>
+    </div>
+
+    <div class="live-card reveal no-link">
       <span class="live-badge"><span class="live-dot"></span>Assessment Build &middot; Retool + Postgres &middot; 🔒 No public link</span>
       <h3>Ambient Ops Triage Workbench</h3>
       <span class="live-url">Retool app + workflow &middot; private repo, reviewer access only</span>
@@ -621,7 +629,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live · Bangla-First · Bangladesh 🇧🇩</span>
       <h3>Al-Ibadah</h3>
       <span class="live-url">alibadahfoundation.com</span>
-      <p>Bangla-first Islamic reference site for Bangladesh — the full Quran (114 surahs, 6,236 ayahs) with five Bangla translations, three tafsirs and ten reciters, 36,432 hadith across 8 collections, the daily duas, prayer times and qibla for all 64 districts, plus zakat, tasbih and Hijri calendar tools. The <code>/ask</code> assistant runs entirely in the browser: BM25 + trigram retrieval over a hand-written, source-cited corpus that refuses rather than invents. Ships as a fully static build with all 141 routes prerendered, on a custom domain. A Flutter companion app on the same corpus is being prepared for Google Play.</p>
+      <p>Bangla-first Islamic reference site for Bangladesh — the full Quran (114 surahs, 6,236 ayahs) with five Bangla translations, three tafsirs and ten reciters, 36,432 hadith across 8 collections, the daily duas, prayer times and qibla for all 64 districts, plus zakat, tasbih and Hijri calendar tools. The <code>/ask</code> assistant runs entirely in the browser: BM25 + trigram retrieval over a hand-written, source-cited corpus that refuses rather than invents. Ships as a fully static build with 327 prerendered routes on a custom domain, and lectures play inside the site in a dialog instead of sending readers off to YouTube. A Flutter companion app on the same corpus has a signed release build ready for its Google Play listing.</p>
       <div class="tags"><span class="tag">React 18</span><span class="tag">Vite</span><span class="tag">TypeScript</span><span class="tag">Static Prerender</span></div>
       <span class="live-open">Visit site ↗</span>
     </a>
@@ -698,11 +706,11 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
-      <span class="live-badge is-app"><span class="live-dot"></span>In Production · Client App</span>
+      <span class="live-badge is-app"><span class="live-dot"></span>In Production · Client App · iOS TestFlight</span>
       <h3>ShopLocalr</h3>
       <span class="live-url">Private client deployment · Malaysia</span>
-      <p>A Flutter local-business discovery app with customer, business and admin roles, covering QR deal redemption with checkout PINs, Gemini-backed recommendations and offline-first Hive caching. Version 2 moves it off Firebase onto a self-hosted Dart API I built: SQLite with access rules enforced on the server, live updates over WebSocket, and a Gemini proxy so no key ships in the app. It runs in Docker behind Caddy with automatic HTTPS on a Google Cloud VM, with daily disk snapshots, a budget alert and CI on every commit.</p>
-      <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart API</span><span class="tag">WebSocket</span><span class="tag">Docker</span><span class="tag">GCP</span></div>
+      <p>A Flutter local-business discovery app with explorer, business and admin roles. Explorers find shops and deals, redeem them with a checkout code, collect loyalty rewards and check-ins, leave reviews, message shops and post on a moderated community board, with Gemini-backed recommendations and offline-first Hive caching. Version 2 moves it off Firebase onto a self-hosted Dart API I built: SQLite with access rules enforced on the server, live updates over WebSocket, and a Gemini proxy so no key ships in the app. It runs in Docker behind Caddy with automatic HTTPS on a Google Cloud VM under its own domain, with SSH only through IAP, a least-privilege service account, reCAPTCHA on sign-up and password reset, and account email sent from the domain with SPF, DKIM and DMARC passing. The latest release adds a full redesign with light and dark mode, and the iOS build is in TestFlight ahead of App Store review.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart API</span><span class="tag">WebSocket</span><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">reCAPTCHA</span></div>
     </div>
 
     <div class="live-card reveal no-link">
@@ -717,7 +725,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge is-app"><span class="live-dot"></span>Live on Google Play &middot; Joint Project</span>
       <h3>Support Welfare Companies</h3>
       <span class="live-url">Google Play &middot; Android &middot; source repo private</span>
-      <p>Employers ranked on how they treat the people who work for them &mdash; a joint project, built with a collaborator and shipped to Google Play. A Flutter Android app for the public sits over one Firebase backend alongside a React + TypeScript reviewer panel. Companies score on five welfare criteria (fair minimum wage, profit share, overtime, workplace discrimination, and insurance and pensions) and the overall score is the mean of all five, so no single criterion can carry a company. It ranks good, better, best rather than blacklisting. A survey answer is a claim, not a rating: a reviewer checks it against public evidence before anything publishes. Google Sign-In plus a disposable-domain blocklist keeps the ballot box clean, and Firestore rules let the public create a schema-validated submission but never read it back or revise it.</p>
+      <p>Employers ranked on how they treat the people who work for them &mdash; a joint project, built with a collaborator and shipped to Google Play. A Flutter Android app for the public sits over one Firebase backend alongside a React + TypeScript reviewer panel. Companies score on five welfare criteria (fair minimum wage, profit share, overtime, workplace discrimination, and insurance and pensions) and the overall score is the mean of all five, so no single criterion can carry a company. It ranks good, better, best rather than blacklisting. A survey answer is a claim, not a rating: a reviewer checks it against public evidence before anything publishes. Google Sign-In plus a disposable-domain blocklist keeps the ballot box clean, and Firestore rules let the public create a schema-validated submission but never read it back or revise it. When AdMob has no ad to fill a slot, a self-serve booking system takes over: a local business submits an ad from inside the app, a reviewer approves and schedules it from the panel, and views and taps are counted per ad. Unity bidding runs through AdMob mediation alongside Meta and AppLovin adapters.</p>
       <div class="live-dl">
         <a href="https://play.google.com/store/apps/details?id=com.supportwelfare.welfare_companies" target="_blank" rel="noopener">↗ Google Play &middot; Android</a>
       </div>
