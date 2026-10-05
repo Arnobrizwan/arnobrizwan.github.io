@@ -568,33 +568,33 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <div class="live-card reveal no-link">
       <span class="live-badge is-app"><span class="live-dot"></span>In Production &middot; Client Work &middot; Malaysia 🇲🇾</span>
       <h3>ATURRR</h3>
-      <span class="live-url">Private client deployment &middot; staff portal at aturrr.com &middot; Android app in client testing</span>
-      <p>Lead management platform for a Malaysian financing consultancy that matches customers with banks for home, refinance, personal and business financing. I built all three parts: a Flutter customer app with phone sign-in, a React web portal for office staff, referral agents and bankers, and 74 Cloud Functions behind them on Firebase in asia-southeast1. Each role only sees the cases and money it is allowed to see, and that is enforced in Firestore rules, not just hidden in the UI. Staff sign in with TOTP two-factor. Referral commissions run on a tier engine, deals are shared through a vertical video feed with tracked referral links, and policy changes are versioned so customers re-consent on their next visit. The app runs in English, Malay, Tamil and Chinese. To keep running costs low, the in-app assistant is a FAQ bot that hands over to a live agent instead of calling a paid LLM. Six CI jobs gate every merge to main.</p>
-      <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore Rules</span><span class="tag">Identity Platform</span></div>
+      <span class="live-url">Private client deployment &middot; Android app in client testing</span>
+      <p>Lead management platform for a Malaysian financing consultancy that matches customers with banks for home, refinance, personal and business financing. I built all three parts: a Flutter customer app, a React web portal for office staff, referral agents and bankers, and the Firebase backend behind them. Each role only sees the cases it is allowed to see, enforced on the server rather than just hidden in the UI. The app runs in English, Malay, Tamil and Chinese.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore</span></div>
     </div>
 
     <div class="live-card reveal no-link">
       <span class="live-badge is-app"><span class="live-dot"></span>Client Work &middot; Malaysia 🇲🇾 &middot; 🔒 No public link</span>
       <h3>RinggitNow</h3>
       <span class="live-url">Private client deployment &middot; Android app + staff panel</span>
-      <p>Short-term personal loan system for a Malaysian operator: a Flutter Android app for applicants, a React + Vite staff panel and Firebase Cloud Functions behind them. Amounts, terms, eligibility, required documents and all borrower-facing text are data the operator edits in the panel, so changing an offer needs no app release. Credit limits grow with on-time repayment, every loan is held to Malaysia&rsquo;s 18% a year cap in the Firestore rules, and repayments come in by DuitNow QR or bank transfer that staff match to the statement.</p>
-      <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore Rules</span><span class="tag">DuitNow QR</span></div>
+      <p>Short-term personal loan system for a Malaysian client: a Flutter Android app for applicants, a React + Vite staff panel and a Firebase backend. Offers, eligibility rules, required documents and in-app text are all managed from the panel, so changing them does not need an app release.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore</span></div>
     </div>
 
     <div class="live-card reveal no-link">
-      <span class="live-badge is-app"><span class="live-dot"></span>In Development &middot; Employer Project &middot; Bangladesh 🇧🇩 &middot; 🔒 No public link</span>
-      <h3>Lab Test Management System (LTMS)</h3>
-      <span class="live-url">Internal system for Hirdaramani Bangladesh &middot; private repo</span>
-      <p>Test request and approval system for Hirdaramani&rsquo;s garment factories. A requester raises a test request form, it goes to the department head and lab manager for approval, samples go to an internal or external lab, the lab acknowledges them and uploads a report, and Finance records the payment. Fourteen business rules decide the approval route, pricing and reminders, and each one has its own tests. The schema is database-first: numbered SQL scripts that only ever add to the client&rsquo;s existing production tables, with the EF Core model generated from the database. The API runs on CQRS handlers, a worker sends single-use approval links and daily overdue reminders from an email outbox, and six RDLC reports print in English, Bangla, Chinese, Sinhala and Tamil. 272 .NET tests and 30 client tests.</p>
-      <div class="tags"><span class="tag">ASP.NET Core (.NET 10)</span><span class="tag">Angular 22</span><span class="tag">SQL Server</span><span class="tag">CQRS</span><span class="tag">EF Core</span><span class="tag">RDLC</span></div>
+      <span class="live-badge is-app"><span class="live-dot"></span>Employer Project &middot; Bangladesh 🇧🇩 &middot; 🔒 No public link</span>
+      <h3>Lab Test Management System</h3>
+      <span class="live-url">Internal system &middot; private repo</span>
+      <p>An internal system that takes lab test requests from submission through approval, lab work, reporting and payment, with role-based access, email notifications and printable reports in five languages. Built database-first on SQL Server, with a Clean Architecture and CQRS backend in ASP.NET Core and an Angular front end, covered by automated tests.</p>
+      <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Angular</span><span class="tag">SQL Server</span><span class="tag">CQRS</span><span class="tag">EF Core</span></div>
     </div>
 
     <div class="live-card reveal no-link">
-      <span class="live-badge"><span class="live-dot"></span>Assessment Build &middot; Retool + Postgres &middot; 🔒 No public link</span>
-      <h3>Ambient Ops Triage Workbench</h3>
-      <span class="live-url">Retool app + workflow &middot; private repo, reviewer access only</span>
-      <p>A keyboard-only operations triage workbench in Retool over Postgres, and the data forensics behind it. Handed a quarterly quality memo and a replica schema, the audit found the memo&rsquo;s SQL was correct and its answer was not: rows were one per ingestion rather than one per note, a type-2 employee dimension fanned out every join, two different people shared a name and were silently merged by a <code>GROUP BY</code>, and an effective-dated rubric and SLA both changed on the same day, moving the pass rate in opposite directions. 149 &ldquo;open&rdquo; escalations turned out to be 43 rows stranded by a rate-limited batch job with no retry. The workbench commits a decision in three keystrokes, restores selection, filter, sort and scroll across a refresh, and cold-loads in under ten seconds off a materialised view. The recovery workflow claims rows under a lease guarded by a partial unique index and retries with full-jitter backoff, with the dead-letter path exercised by a forced-failure endpoint. 54 tests, CI green, and a gate that diffs the shipped bundle against its source.</p>
-      <div class="tags"><span class="tag">Retool</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span><span class="tag">SQL Forensics</span><span class="tag">Workflows</span></div>
+      <span class="live-badge"><span class="live-dot"></span>Take-Home Assessment &middot; Retool + Postgres &middot; 🔒 No public link</span>
+      <h3>Ops Triage Workbench</h3>
+      <span class="live-url">Retool app + workflow &middot; private repo</span>
+      <p>A take-home build: a keyboard-driven triage tool in Retool over Postgres, a SQL audit of the dataset behind it, and a recovery workflow that retries failed jobs with backoff. Covered by automated tests and CI.</p>
+      <div class="tags"><span class="tag">Retool</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">Workflows</span></div>
     </div>
 
     <a class="live-card reveal" href="https://taghyeer-chat-rust.vercel.app/app" target="_blank" rel="noopener">
@@ -618,9 +618,9 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <a class="live-card reveal" href="https://ffgamerbd.com" target="_blank" rel="noopener">
       <span class="live-badge"><span class="live-dot"></span>Live · Client Work · Bangladesh 🇧🇩</span>
       <h3>FF Gamer BD</h3>
-      <span class="live-url">ffgamerbd.com &middot; filehubbd.shop</span>
-      <p>Live Free Fire diamond top-up store in Bangladesh &mdash; originally launched as <strong>MANGO TOPUP</strong>, since rebranded and moved &mdash; running on a Laravel 10 / Filament stack. I did the backend integration work: wired the Free Unipin reseller API in as an automated fulfilment provider, then built the PipraPay payment-gateway integration &mdash; hosted checkout, plus an API-key-authenticated webhook that re-verifies every callback against the provider before an order is marked paid. Both integrations came down to the same underlying fault: the storefront resolved providers through an abstraction its own checkout path bypassed with hardcoded calls. Shipped to both storefronts running off the account.</p>
-      <div class="tags"><span class="tag">Laravel 10</span><span class="tag">PHP 8.1</span><span class="tag">Payment Gateway</span><span class="tag">Webhooks</span></div>
+      <span class="live-url">ffgamerbd.com</span>
+      <p>Live Free Fire top-up store in Bangladesh on Laravel and Filament. I did the backend integration work: connected a reseller API for automatic order fulfilment and built the payment gateway integration, where every payment callback is checked with the provider before an order is marked paid.</p>
+      <div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Payment Gateway</span><span class="tag">Webhooks</span></div>
       <span class="live-open">Visit site ↗</span>
     </a>
 
@@ -628,8 +628,8 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Client Work &middot; Bangladesh 🇧🇩</span>
       <h3>PI STAR</h3>
       <span class="live-url">pistarbd.com</span>
-      <p>Bangladeshi streetwear and minimalist-tech storefront on Node.js and Express over SQLite, served through Phusion Passenger on cPanel and LiteSpeed, with bKash, Nagad, Rocket and cash-on-delivery checkout across all eight divisions. I came in on a production outage and worked it through three separate failures in one day. Every URL on the account returned 503, including plain static files that never touch application code, which pointed away from the app and at the account itself: Passenger hands the whole domain to Node, the app was dying on boot and respawning every two seconds, and that held the CloudLinux cage at 100% CPU and 87 of 100 processes, so nothing could be served at all. Underneath sat dozens of orphaned <code>npm install</code> processes from abandoned deployments, which had exhausted the fork limit &mdash; every command in the account failed with <code>EAGAIN</code> until they were cleared. With the cage free the app still died, silently, always on the same line. A diagnostic script returned exit code <code>-11</code>: the <code>better-sqlite3</code> prebuilt binary was segfaulting on load, killing the process before any JavaScript error could be thrown, which is why the app&rsquo;s own error handler never fired and the boot log stopped mid-sentence every time. Pinning a build that compiles its own binding fixed it, alongside a missing environment file. A later redeploy reinstalled the same broken version and the store began refusing half its requests while the process itself stayed up and never crashed; serving a static file from the same document root in the same second returned 200 every time, which located the fault above the application entirely and turned a vague outage into a specific escalation the host could act on.</p>
-      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">cPanel / LiteSpeed</span><span class="tag">CloudLinux LVE</span><span class="tag">Incident Response</span></div>
+      <p>Bangladeshi streetwear and tech-accessories storefront on Node.js and Express, with bKash, Nagad, Rocket and cash-on-delivery checkout. I was brought in during a production outage, traced it to the hosting setup and a broken dependency build, and got the store serving again.</p>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">Incident Response</span></div>
       <span class="live-open">Visit site ↗</span>
     </a>
 
@@ -727,8 +727,8 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge is-app"><span class="live-dot"></span>In Production · Client App · iOS TestFlight</span>
       <h3>ShopLocalr</h3>
       <span class="live-url">Private client deployment · USA 🇺🇸</span>
-      <p>A Flutter local-business discovery app with explorer, business and admin roles. Explorers find shops and deals, redeem them with a checkout code, collect loyalty rewards and check-ins, leave reviews, message shops and post on a moderated community board, with Gemini-backed recommendations and offline-first Hive caching. Version 2 moves it off Firebase onto a self-hosted Dart API I built: SQLite with access rules enforced on the server, live updates over WebSocket, and a Gemini proxy so no key ships in the app. It runs in Docker behind Caddy with automatic HTTPS on a Google Cloud VM under its own domain, with SSH only through IAP, a least-privilege service account, reCAPTCHA on sign-up and password reset, and account email sent from the domain with SPF, DKIM and DMARC passing. The latest release adds a full redesign with light and dark mode, and the iOS build is in TestFlight ahead of App Store review.</p>
-      <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart API</span><span class="tag">WebSocket</span><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">reCAPTCHA</span></div>
+      <p>A Flutter local-business discovery app with explorer, business and admin roles. Explorers find shops and deals, redeem them with a checkout code, collect loyalty rewards, leave reviews, message shops and post on a moderated community board, with Gemini-backed recommendations and offline-first caching. Version 2 moves it off Firebase onto a self-hosted Dart API I built, with access rules enforced on the server and live updates over WebSocket. The latest release adds a full redesign with light and dark mode, and the iOS build is in TestFlight.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart API</span><span class="tag">WebSocket</span><span class="tag">Docker</span><span class="tag">GCP</span></div>
     </div>
 
     <div class="live-card reveal no-link">
