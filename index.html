@@ -446,6 +446,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
         <ul>
           <li>Developing and maintaining ERP modules supporting production, inventory, and order-management workflows across factory operations.</li>
           <li>Writing and tuning SQL against large operational datasets, building reports and data integrations between ERP and internal systems.</li>
+          <li>Building the Lab Test Management System (LTMS): ASP.NET Core and Angular over SQL Server, with multi-level approvals, lab workflow, payments and multilingual reports.</li>
           <li>Working with operations and IT stakeholders to translate process requirements into shipped features.</li>
         </ul>
         <div class="xp-tags"><span class="tag">ERP</span><span class="tag">SQL</span><span class="tag">Data Integration</span><span class="tag">Reporting</span></div>
@@ -570,6 +571,22 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-url">Private client deployment &middot; staff portal at aturrr.com &middot; Android app in client testing</span>
       <p>Lead management platform for a Malaysian financing consultancy that matches customers with banks for home, refinance, personal and business financing. I built all three parts: a Flutter customer app with phone sign-in, a React web portal for office staff, referral agents and bankers, and 74 Cloud Functions behind them on Firebase in asia-southeast1. Each role only sees the cases and money it is allowed to see, and that is enforced in Firestore rules, not just hidden in the UI. Staff sign in with TOTP two-factor. Referral commissions run on a tier engine, deals are shared through a vertical video feed with tracked referral links, and policy changes are versioned so customers re-consent on their next visit. The app runs in English, Malay, Tamil and Chinese. To keep running costs low, the in-app assistant is a FAQ bot that hands over to a live agent instead of calling a paid LLM. Six CI jobs gate every merge to main.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore Rules</span><span class="tag">Identity Platform</span></div>
+    </div>
+
+    <div class="live-card reveal no-link">
+      <span class="live-badge is-app"><span class="live-dot"></span>Client Work &middot; Malaysia 🇲🇾 &middot; 🔒 No public link</span>
+      <h3>RinggitNow</h3>
+      <span class="live-url">Private client deployment &middot; Android app + staff panel</span>
+      <p>Short-term personal loan system for a Malaysian operator: a Flutter Android app for applicants, a React + Vite staff panel and Firebase Cloud Functions behind them. Amounts, terms, eligibility, required documents and all borrower-facing text are data the operator edits in the panel, so changing an offer needs no app release. Credit limits grow with on-time repayment, every loan is held to Malaysia&rsquo;s 18% a year cap in the Firestore rules, and repayments come in by DuitNow QR or bank transfer that staff match to the statement.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore Rules</span><span class="tag">DuitNow QR</span></div>
+    </div>
+
+    <div class="live-card reveal no-link">
+      <span class="live-badge is-app"><span class="live-dot"></span>In Development &middot; Employer Project &middot; Bangladesh 🇧🇩 &middot; 🔒 No public link</span>
+      <h3>Lab Test Management System (LTMS)</h3>
+      <span class="live-url">Internal system for Hirdaramani Bangladesh &middot; private repo</span>
+      <p>Test request and approval system for Hirdaramani&rsquo;s garment factories. A requester raises a test request form, it goes to the department head and lab manager for approval, samples go to an internal or external lab, the lab acknowledges them and uploads a report, and Finance records the payment. Fourteen business rules decide the approval route, pricing and reminders, and each one has its own tests. The schema is database-first: numbered SQL scripts that only ever add to the client&rsquo;s existing production tables, with the EF Core model generated from the database. The API runs on CQRS handlers, a worker sends single-use approval links and daily overdue reminders from an email outbox, and six RDLC reports print in English, Bangla, Chinese, Sinhala and Tamil. 272 .NET tests and 30 client tests.</p>
+      <div class="tags"><span class="tag">ASP.NET Core (.NET 10)</span><span class="tag">Angular 22</span><span class="tag">SQL Server</span><span class="tag">CQRS</span><span class="tag">EF Core</span><span class="tag">RDLC</span></div>
     </div>
 
     <div class="live-card reveal no-link">
@@ -699,6 +716,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <div class="live-dl">
         <a href="https://moiendelivery.lu/" target="_blank" rel="noopener">↗ moiendelivery.lu</a>
         <a href="https://play.google.com/store/apps/details?id=com.moien.moien_user_app" target="_blank" rel="noopener">↗ Google Play · Customer</a>
+        <a href="https://play.google.com/store/apps/details?id=com.moiendelivery.delivery" target="_blank" rel="noopener">↗ Google Play · Rider</a>
         <a href="https://apps.apple.com/us/app/moien-food-delivery/id6778914567" target="_blank" rel="noopener">↗ App Store · Customer</a>
         <a href="https://apps.apple.com/us/app/moien-delivery/id6746574495" target="_blank" rel="noopener">↗ App Store · Driver</a>
       </div>
@@ -1174,7 +1192,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
     <div class="skill-col reveal">
       <h4>// Cloud &amp; DevOps</h4>
-      <ul><li>AWS — Lambda · Bedrock · DynamoDB · Cognito</li><li>GCP — Cloud Run · Firebase</li><li>Docker · Kubernetes</li><li>GitHub Actions CI/CD</li><li>Redis · Prometheus · Grafana</li><li>PostgreSQL · MySQL · SQL Server · Firestore</li></ul>
+      <ul><li>AWS — Lambda · Bedrock · DynamoDB · Cognito</li><li>GCP — Cloud Run · Firebase</li><li>Docker · Kubernetes</li><li>GitHub Actions CI/CD</li><li>Redis · Prometheus · Grafana</li><li>PostgreSQL · Supabase · MySQL · SQL Server · Firestore</li></ul>
     </div>
   </div>
 </section>
