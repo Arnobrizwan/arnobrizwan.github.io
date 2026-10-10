@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARNOB RIZWAN AHMAD — AI / LLM Engineer</title>
-<meta name="description" content="Arnob Rizwan Ahmad — AI/LLM engineer building agentic workflows, RAG and evaluation infrastructure. ERP Developer at Hirdaramani, previously Agentic AI Engineer at BLOOMTECH, shipping products across 4 countries.">
+<meta name="description" content="Arnob Rizwan Ahmad — AI/LLM engineer building agentic workflows, RAG and evaluation infrastructure. ERP Developer at Hirdaramani, previously Agentic AI Engineer at BLOOMTECH, shipping products across 5 countries.">
 <meta property="og:title" content="Arnob Rizwan Ahmad — AI / LLM Engineer">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arnobrizwan.github.io/">
@@ -13,7 +13,14 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:image" content="https://arnobrizwan.github.io/og-image.png">
-<meta property="og:description" content="AI/LLM engineer building agentic workflows, RAG and evaluation infrastructure. ERP Developer at Hirdaramani. Shipping across 4 countries.">
+<meta property="og:description" content="AI/LLM engineer building agentic workflows, RAG and evaluation infrastructure. ERP Developer at Hirdaramani. Shipping across 5 countries.">
+<link rel="canonical" href="https://arnobrizwan.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="author" content="Arnob Rizwan Ahmad">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Arnob Rizwan Ahmad","url":"https://arnobrizwan.github.io/","jobTitle":"AI / LLM Engineer","worksFor":{"@type":"Organization","name":"Hirdaramani Bangladesh"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Universiti Teknologi Malaysia"},"address":{"@type":"PostalAddress","addressLocality":"Chittagong","addressCountry":"BD"},"email":"mailto:arnobrizwan23@gmail.com","sameAs":["https://github.com/Arnobrizwan","https://www.linkedin.com/in/arnob-rizwan-033704239/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Archivo:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -76,7 +83,22 @@ nav{
   transition:background .2s,transform .2s;
 }
 .nav-cta:hover{background:var(--acid);transform:rotate(-2deg)}
-@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+.nav-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px;margin-left:10px}
+.nav-toggle span{display:block;width:18px;height:2px;background:var(--paper);border-radius:2px;transition:transform .25s}
+.nav-toggle[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.m-cta{display:none}
+@media(max-width:640px){
+  .nav-links{margin-left:auto}
+  .nav-links a:not(.nav-cta){display:none}
+  .nav-toggle{display:inline-flex}
+  .nav-links.open{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px 18px 18px;background:var(--ink);border-bottom:1px solid var(--line)}
+  .nav-links.open a:not(.nav-cta){display:block;padding:14px 0;font-size:14px;border-bottom:1px solid var(--line)}
+  .nav-links.open .nav-cta{margin-top:14px;text-align:center}
+  .m-cta{display:inline-flex;position:fixed;right:16px;bottom:16px;z-index:200;align-items:center;padding:13px 20px;border-radius:99px;background:var(--acid);color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s,transform .25s}
+  body.show-mcta .m-cta{opacity:1;transform:none;pointer-events:auto}
+  footer{padding-bottom:90px}
+}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(48px,9vh,110px) clamp(20px,5vw,64px) 60px;position:relative}
@@ -202,6 +224,15 @@ section{padding:clamp(60px,10vh,120px) clamp(20px,5vw,64px)}
 .live-badge.is-app .live-dot{background:var(--tang);animation:apppulse 2s infinite}
 @keyframes apppulse{0%{box-shadow:0 0 0 0 rgba(255,92,26,.6)}70%{box-shadow:0 0 0 9px rgba(255,92,26,0)}100%{box-shadow:0 0 0 0 rgba(255,92,26,0)}}
 .live-card.no-link{cursor:default}
+.live-shot{display:block;width:calc(100% + 52px);max-width:none;height:auto;aspect-ratio:8/5;object-fit:cover;object-position:top;margin:-26px -26px 6px;border-bottom:1px solid rgba(242,239,230,.14);background:#151515}
+.live-ph{display:flex;flex-direction:column;justify-content:space-between;gap:10px;width:calc(100% + 52px);margin:-26px -26px 6px;aspect-ratio:8/5;padding:22px 26px;border-bottom:1px solid rgba(242,239,230,.14);overflow:hidden;
+  background:radial-gradient(circle at 85% 15%,rgba(255,92,26,.22),transparent 55%),radial-gradient(circle at 10% 90%,rgba(200,247,60,.15),transparent 55%),linear-gradient(rgba(242,239,230,.04) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,rgba(242,239,230,.04) 1px,transparent 1px) 0 0/32px 32px,#121212}
+.ph-k{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.ph-n{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(26px,3vw,40px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase;color:var(--paper)}
+.ph-l{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tang)}
+@media(max-width:640px){.live-ph{width:calc(100% + 40px);margin:-20px -20px 6px;padding:18px 20px}}
+.live-shot-wide{aspect-ratio:auto;height:clamp(200px,26vw,340px)}
+@media(max-width:640px){.live-shot{width:calc(100% + 40px);margin:-20px -20px 6px}}
 .live-card.no-link:hover{transform:none;border-color:rgba(242,239,230,.14);background:linear-gradient(160deg,rgba(200,247,60,.05),rgba(255,92,26,.03))}
 .live-dl{display:flex;gap:10px;flex-wrap:wrap}
 .live-dl a{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(242,239,230,.25);border-radius:100px;padding:5px 12px;color:var(--paper);text-decoration:none}
@@ -353,14 +384,14 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>● OPEN TO AI / LLM ENGINEERING ROLES</span><span>● GRADUATED JULY 2026 — UTM</span><span>● SHIPPING FOR CLIENTS IN 🇱🇺 🇺🇸 🇧🇩 🇲🇾</span>
-    <span>● OPEN TO AI / LLM ENGINEERING ROLES</span><span>● GRADUATED JULY 2026 — UTM</span><span>● SHIPPING FOR CLIENTS IN 🇱🇺 🇺🇸 🇧🇩 🇲🇾</span>
+    <span>● OPEN TO AI / LLM ENGINEERING ROLES</span><span>● GRADUATED JULY 2026 — UTM</span><span>● SHIPPING FOR CLIENTS IN 🇱🇺 🇺🇸 🇪🇸 🇧🇩 🇲🇾</span>
+    <span>● OPEN TO AI / LLM ENGINEERING ROLES</span><span>● GRADUATED JULY 2026 — UTM</span><span>● SHIPPING FOR CLIENTS IN 🇱🇺 🇺🇸 🇪🇸 🇧🇩 🇲🇾</span>
   </div>
 </div>
 
 <nav>
   <a class="logo" href="#top">ARNOB<em>.</em></a>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="#work">Work</a>
     <a href="#live">Live</a>
     <a href="#ai-systems">LLM Systems</a>
@@ -369,7 +400,9 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <a href="#contact">Contact</a>
     <a class="nav-cta" href="docs/Arnob_Rizwan_Ahmad_Resume.pdf" download>Resume ↓</a>
   </div>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
 </nav>
+<a class="m-cta" href="#contact">Let&rsquo;s talk ↗</a>
 
 <header class="hero" id="top">
   <div class="hero-meta">
@@ -387,7 +420,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <b>AI/LLM engineer</b> building agentic workflows, RAG and evaluation infrastructure &mdash; and the backend they run on.
     Currently <b>ERP Developer</b> at Hirdaramani Bangladesh. Previously Agentic AI Engineer at BLOOMTECH, ML Engineer
     for a US news-intelligence platform and founding backend engineer at an AI storage startup. Software Engineering graduate of
-    <b>Universiti Teknologi Malaysia</b> (July 2026, First Class), shipping for clients in the <b>US, Luxembourg, Bangladesh, and Malaysia</b>
+    <b>Universiti Teknologi Malaysia</b> (July 2026, First Class), shipping for clients in the <b>US, Luxembourg, Spain, Bangladesh and Malaysia</b>
     long before the degree finished.
   </p>
   <div class="hero-actions">
@@ -398,10 +431,10 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 </header>
 
 <div class="stats reveal">
-  <div class="stat"><div class="num" data-count="14">0</div><div class="lbl">Projects On This Page</div></div>
-  <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">Countries Shipped To</div></div>
-  <div class="stat"><div class="num" data-count="40">0</div><div class="lbl">Schools On My App</div></div>
-  <div class="stat"><div class="num" data-count="10">0</div><div class="lbl">AI Agents, One Platform</div></div>
+  <div class="stat"><div class="num" data-count="48">48</div><div class="lbl">Projects On This Page</div></div>
+  <div class="stat"><div class="num" data-count="5">5</div><div class="lbl">Countries Shipped To</div></div>
+  <div class="stat"><div class="num" data-count="40">40</div><div class="lbl">Schools On My App</div></div>
+  <div class="stat"><div class="num" data-count="10">10</div><div class="lbl">AI Agents, One Platform</div></div>
   </div>
 
 <div class="skill-marquee" aria-hidden="true">
@@ -415,7 +448,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   <div class="sec-head reveal">
     <span class="idx">01</span>
     <h2>Experience</h2>
-    <p class="tail">Four countries, three continents. Client work and full-time roles, start to ship.</p>
+    <p class="tail">Full-time and contract roles for teams in Bangladesh, the US and Luxembourg, start to ship.</p>
   </div>
   <div class="xp">
     <div class="xp-item reveal">
@@ -541,6 +574,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   </div>
   <div class="live-grid">
     <a class="live-card reveal" href="https://shipcheck-gold.vercel.app" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/shipcheck.webp" alt="Screenshot of the ShipCheck homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Free Tool &middot; No Login</span>
       <h3>ShipCheck</h3>
       <span class="live-url">shipcheck-gold.vercel.app</span>
@@ -549,6 +583,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-open">Open the tool ↗</span>
     </a>
     <a class="live-card reveal" href="https://nexscholar.com" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/nexscholar.webp" alt="Screenshot of the NexScholar homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Contributor &middot; Malaysia 🇲🇾</span>
       <h3>NexScholar</h3>
       <span class="live-url">nexscholar.com</span>
@@ -557,6 +592,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-open">Visit site ↗</span>
     </a>
     <div class="live-card reveal no-link">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · React + Vite · Cloud Functions</span><span class="ph-n">ATURRR</span><span class="ph-l">🔒 Private client build</span></div>
       <span class="live-badge is-app"><span class="live-dot"></span>In Production &middot; Client Work &middot; Malaysia 🇲🇾</span>
       <h3>ATURRR</h3>
       <span class="live-url">Private client deployment &middot; Android app in client testing</span>
@@ -565,6 +601,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · React + Vite · Cloud Functions</span><span class="ph-n">RinggitNow</span><span class="ph-l">🔒 Private client build</span></div>
       <span class="live-badge is-app"><span class="live-dot"></span>Client Work &middot; Malaysia 🇲🇾 &middot; 🔒 No public link</span>
       <h3>RinggitNow</h3>
       <span class="live-url">Private client deployment &middot; Android app + staff panel</span>
@@ -573,6 +610,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">ASP.NET Core · Angular · SQL Server</span><span class="ph-n">Lab Test Management System</span><span class="ph-l">🔒 Internal employer system</span></div>
       <span class="live-badge is-app"><span class="live-dot"></span>Employer Project &middot; Bangladesh 🇧🇩 &middot; 🔒 No public link</span>
       <h3>Lab Test Management System</h3>
       <span class="live-url">Hirdaramani Group &middot; internal system</span>
@@ -581,6 +619,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Retool · PostgreSQL · TypeScript</span><span class="ph-n">Ops Triage Workbench</span><span class="ph-l">🔒 Private repo</span></div>
       <span class="live-badge"><span class="live-dot"></span>Take-Home Assessment &middot; Retool + Postgres &middot; 🔒 No public link</span>
       <h3>Ops Triage Workbench</h3>
       <span class="live-url">Retool app + workflow &middot; private repo</span>
@@ -589,6 +628,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <a class="live-card reveal" href="https://taghyeer-chat-rust.vercel.app/app" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/relay.webp" alt="Screenshot of the Relay homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Real-Time &middot; Offline-First</span>
       <h3>Relay</h3>
       <span class="live-url">taghyeer-chat-rust.vercel.app</span>
@@ -598,6 +638,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://stocktrade-topaz.vercel.app" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/stocktrade.webp" alt="Screenshot of the StockTrade homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Local LLM &middot; No Login</span>
       <h3>StockTrade</h3>
       <span class="live-url">stocktrade-topaz.vercel.app</span>
@@ -607,6 +648,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://ffgamerbd.com" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/ffgamerbd.webp" alt="Screenshot of the FF Gamer BD homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live · Client Work · Bangladesh 🇧🇩</span>
       <h3>FF Gamer BD</h3>
       <span class="live-url">ffgamerbd.com</span>
@@ -616,6 +658,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://pistarbd.com" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/pistar.webp" alt="Screenshot of the PI STAR homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Client Work &middot; Bangladesh 🇧🇩</span>
       <h3>PI STAR</h3>
       <span class="live-url">pistarbd.com</span>
@@ -625,6 +668,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://crypto-rlg.vercel.app" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/rubicon.webp" alt="Screenshot of the Rubicon Liberty Group homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live · Product Build · Crypto Markets</span>
       <h3>Rubicon Liberty Group</h3>
       <span class="live-url">crypto-rlg.vercel.app</span>
@@ -634,6 +678,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://alibadahfoundation.com" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/alibadah.webp" alt="Screenshot of the Al-Ibadah homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live · Bangla-First · Bangladesh 🇧🇩</span>
       <h3>Al-Ibadah</h3>
       <span class="live-url">alibadahfoundation.com</span>
@@ -643,6 +688,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://momsoilchange.com" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/moms.webp" alt="Screenshot of the MOMS Oil Change homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live · Client Work · USA 🇺🇸</span>
       <h3>MOMS Oil Change</h3>
       <span class="live-url">momsoilchange.com</span>
@@ -652,6 +698,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://pizzalabgroup.com" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/pizzalab.webp" alt="Screenshot of the Pizza Lab homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Client Work &middot; Spain 🇪🇸</span>
       <h3>Pizza Lab</h3>
       <span class="live-url">pizzalabgroup.com</span>
@@ -660,6 +707,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-open">Visit site ↗</span>
     </a>
       <a class="live-card reveal" href="https://safecurve-sim.vercel.app" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/safecurve.webp" alt="Screenshot of the SafeCurve homepage" width="800" height="500" loading="lazy" decoding="async">
         <span class="live-badge"><span class="live-dot"></span>Live · Road Safety · Simulation</span>
         <h3>SafeCurve</h3>
         <span class="live-url">safecurve-sim.vercel.app</span>
@@ -669,6 +717,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       </a>
 
     <a class="live-card reveal" href="https://bestauto-rentals.vercel.app" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/bestauto.webp" alt="Screenshot of the Best Auto Rentals homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live · Full Platform · 80 Tests</span>
       <h3>Best Auto Rentals</h3>
       <span class="live-url">bestauto-rentals.vercel.app</span>
@@ -680,6 +729,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     
 
     <a class="live-card reveal" href="https://photonixresearch.com" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/photonix.webp" alt="Screenshot of the PhotoniX Research homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live · Client Work · Research</span>
       <h3>PhotoniX Research</h3>
       <span class="live-url">photonixresearch.com</span>
@@ -689,6 +739,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
     <a class="live-card reveal" href="https://jobportal-blush.vercel.app" target="_blank" rel="noopener">
+      <img class="live-shot" src="assets/shots/jobportal.webp" alt="Screenshot of the JobPortal homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge"><span class="live-dot"></span>Live · Full-Stack · Product</span>
       <h3>JobPortal</h3>
       <span class="live-url">jobportal-blush.vercel.app</span>
@@ -699,6 +750,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 
 
     <a class="live-card reveal" href="https://github.com/Arnobrizwan/ZeroWaste-Hub/releases/tag/v1.0.0" target="_blank" rel="noopener">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Gemini Vision · TFLite</span><span class="ph-n">ZeroWaste Hub</span><span class="ph-l">↓ Signed APK + IPA</span></div>
       <span class="live-badge is-app"><span class="live-dot"></span>Installable App · Android + iOS</span>
       <h3>ZeroWaste Hub</h3>
       <span class="live-url">Signed APK &amp; IPA on GitHub Releases</span>
@@ -709,6 +761,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </a>
 
 <div class="live-card reveal">
+      <img class="live-shot" src="assets/shots/moien.webp" alt="Screenshot of the Moien Delivery homepage" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge is-app"><span class="live-dot"></span>Live on Stores · Luxembourg 🇱🇺</span>
       <h3>Moien Delivery</h3>
       <span class="live-url">moiendelivery.lu · Google Play &amp; Apple App Store</span>
@@ -724,6 +777,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Dart API · WebSocket</span><span class="ph-n">ShopLocalr</span><span class="ph-l">🔒 iOS TestFlight</span></div>
       <span class="live-badge is-app"><span class="live-dot"></span>In Production · Client App · iOS TestFlight</span>
       <h3>ShopLocalr</h3>
       <span class="live-url">Private client deployment · USA 🇺🇸</span>
@@ -732,6 +786,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">React Native · React · Firebase</span><span class="ph-n">School Care App</span><span class="ph-l">🔒 40 schools · private distribution</span></div>
       <span class="live-badge is-app"><span class="live-dot"></span>In Production · 40 Schools</span>
       <h3>School Care App</h3>
       <span class="live-url">Private distribution · Play Store closed testing</span>
@@ -740,6 +795,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal">
+      <img class="live-shot" src="assets/shots/supportwelfare.webp" alt="Support Welfare Companies app screens on Google Play" width="800" height="500" loading="lazy" decoding="async">
       <span class="live-badge is-app"><span class="live-dot"></span>Live on Google Play &middot; Joint Project</span>
       <h3>Support Welfare Companies</h3>
       <span class="live-url">Google Play &middot; Android &middot; source repo private</span>
@@ -761,6 +817,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   </div>
 
   <a class="live-card reveal" href="https://applied-llm-systems.vercel.app" target="_blank" rel="noopener" style="margin-bottom:20px">
+      <img class="live-shot live-shot-wide" src="assets/shots/appliedllm.webp" alt="Screenshot of the applied-llm-systems homepage" width="800" height="500" loading="lazy" decoding="async">
     <span class="live-badge"><span class="live-dot"></span>Live &middot; 15 Interactive Demos &middot; 494 Tests &middot; Zero Paid APIs</span>
     <h3>applied-llm-systems</h3>
     <span class="live-url">applied-llm-systems.vercel.app &middot; github.com/Arnobrizwan/applied-llm-systems</span>
@@ -867,7 +924,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   <div class="sec-head reveal">
     <span class="idx">04</span>
     <h2>Projects</h2>
-    <p class="tail">Fifteen builds I'd defend in a code review — agents, LLM evaluation infrastructure, MLOps, and mobile. The rest of the archive lives on <a href="https://github.com/Arnobrizwan" target="_blank" rel="noopener">GitHub</a>.</p>
+    <p class="tail">Thirteen builds I'd defend in a code review — agents, LLM evaluation infrastructure, MLOps, and mobile. The rest of the archive lives on <a href="https://github.com/Arnobrizwan" target="_blank" rel="noopener">GitHub</a>.</p>
   </div>
   <div class="filters reveal">
     <button class="fbtn on" data-f="all">All</button>
@@ -944,12 +1001,6 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <p>AI urban-planning app for Kuala Lumpur — graph neural network and reinforcement-learning traffic models behind a Flutter/Firebase frontend, with a Gemini RAG chatbot answering city-planning questions over local data.</p>
       <div class="meta"><div class="tags"><span class="tag">GNN · RL</span><span class="tag">Flutter</span><span class="tag">Gemini RAG</span></div><span class="arrow">↗</span></div>
     </a>
-<a class="card reveal" data-cat="ai mobile" href="https://github.com/Arnobrizwan/ZeroWaste-Hub" target="_blank" rel="noopener">
-      <span class="ct">Social Impact · APK Shipped</span>
-      <h3>ZeroWaste Hub</h3>
-      <p>Food-rescue app for Malaysia connecting donors, recipients, and volunteer riders — Gemini vision grades dish quality and halal status, an on-device TFLite classifier caches its own model, Checkout.com/TNG eWallet payments, and four languages. Release APK on GitHub.</p>
-      <div class="meta"><div class="tags"><span class="tag">Flutter</span><span class="tag">Gemini Vision</span><span class="tag">TFLite</span></div><span class="arrow">↗</span></div>
-    </a>
 <a class="card reveal" data-cat="mobile full" href="https://github.com/Arnobrizwan/MomentumHR---DHL-Inspired-Intelligent-Leave-Logistics" target="_blank" rel="noopener">
       <span class="ct">HR Tech · DHL-Inspired</span>
       <h3>MomentumHR</h3>
@@ -961,18 +1012,6 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <h3>Chip Performance Platform</h3>
       <p>Semiconductor analytics platform — FastAPI backend simulating real-time chip telemetry with a Streamlit dashboard on top, and an ML model predicting chip failures before they happen.</p>
       <div class="meta"><div class="tags"><span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">ML Prediction</span></div><span class="arrow">↗</span></div>
-    </a>
-<a class="card reveal" data-cat="full" href="https://shipcheck-gold.vercel.app" target="_blank" rel="noopener">
-      <span class="ct">Dev Tools · Live</span>
-      <h3>ShipCheck</h3>
-      <p>Free health check for websites, App Store and Google Play listings: seven weighted categories, Lighthouse-backed performance and a fix for every finding, calibrated to within 10 points of youhadonejob.dev on 26 real sites.</p>
-      <div class="meta"><div class="tags"><span class="tag">Node.js</span><span class="tag">Serverless</span><span class="tag">Lighthouse</span></div><span class="arrow">↗</span></div>
-    </a>
-<a class="card reveal" data-cat="mobile full" href="https://play.google.com/store/apps/details?id=com.supportwelfare.welfare_companies" target="_blank" rel="noopener">
-      <span class="ct">Social Impact · Mobile &amp; Full-Stack</span>
-      <h3>Support Welfare Companies</h3>
-      <p>Live on Google Play. A joint project ranking employers on worker welfare &mdash; Flutter app for the public, React + TypeScript reviewer panel, one Firebase backend. Five welfare criteria averaged into one score, with Google Sign-In, a disposable-domain blocklist and create-only Firestore rules keeping submissions honest.</p>
-      <div class="meta"><div class="tags"><span class="tag">Flutter</span><span class="tag">React TS</span><span class="tag">Firebase</span><span class="tag">Google Play</span></div><span class="arrow">↗</span></div>
     </a>
 
     
@@ -1073,7 +1112,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   <div class="sec-head reveal" style="margin-top:90px">
     <span class="idx">04b</span>
     <h2>Private &amp; Client Builds</h2>
-    <p class="tail">Fifteen more shipped under NDA or private distribution &mdash; described by problem and outcome, since the code isn't mine to publish.</p>
+    <p class="tail">Eleven more shipped under NDA or private distribution &mdash; described by problem and outcome, since the code isn't mine to publish.</p>
   </div>
   <div class="grid">
 <div class="card reveal" data-cat="ai full">
@@ -1093,12 +1132,6 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <h3>Qawel</h3>
       <p>WhatsApp-style construction project management on proper clean architecture (Riverpod, feature/domain layers) — project chat with voice notes, daily progress reports rendered to PDF server-side, and Google Cloud Translation across English, Arabic, and Urdu with full RTL support.</p>
       <div class="meta"><div class="tags"><span class="tag">Flutter</span><span class="tag">Cloud Functions</span><span class="tag">EN/AR/UR</span></div><span class="arrow">🔒</span></div>
-    </div>
-<div class="card reveal" data-cat="ai mobile">
-      <span class="ct">Local Commerce · 🔒 Private</span>
-      <h3>ShopLocalr</h3>
-      <p>Local-business discovery platform with customer, business, and admin roles — QR deal redemption with checkout PINs, a Local Impact Score leaderboard, Gemini-backed recommendations, and offline-first Hive caching. Shipped for a freelance client, and since moved from Firebase to a self-hosted Dart API with WebSocket live updates.</p>
-      <div class="meta"><div class="tags"><span class="tag">Flutter</span><span class="tag">Gemini</span><span class="tag">Google Maps</span></div><span class="arrow">🔒</span></div>
     </div>
 <div class="card reveal" data-cat="ai full">
       <span class="ct">Mental Health · 🔒 Private</span>
@@ -1124,12 +1157,6 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <p>Academic research assistant that runs fully local — FAISS RAG over uploaded PDFs with Llama 3 via Ollama (Groq fallback chains), three-stage PDF extraction down to Tesseract OCR, a hand-rolled citation engine in four formats, plus AI flashcards and mind maps.</p>
       <div class="meta"><div class="tags"><span class="tag">Llama 3</span><span class="tag">FAISS</span><span class="tag">RAG</span></div><span class="arrow">🔒</span></div>
     </div>
-<div class="card reveal" data-cat="mobile full">
-      <span class="ct">Client Work · 40 Schools</span>
-      <h3>School Care App</h3>
-      <p>School management suite adopted by 40 schools across Sylhet, Bangladesh — a parent/teacher React Native app, a Vite + Tailwind admin dashboard, and Cloud Functions fanning out role-targeted FCM push by school, role, and class. Heading to Google Play.</p>
-      <div class="meta"><div class="tags"><span class="tag">React Native</span><span class="tag">FCM</span><span class="tag">Firebase</span></div><span class="arrow">🔒</span></div>
-    </div>
 <div class="card reveal" data-cat="ai">
       <span class="ct">Real-Time CV · 🔒 Private</span>
       <h3>Hack2Drive Controller</h3>
@@ -1154,19 +1181,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <p>Prothom Alo-class Bangladesh news platform designed read-heavy and Bangla-first — Django 5 + DRF with Celery, Elasticsearch search, and Redis caching behind nginx, fronted by a Next.js 15 App Router UI. Full architecture rationale documented, Docker Compose throughout.</p>
       <div class="meta"><div class="tags"><span class="tag">Django 5</span><span class="tag">Next.js 15</span><span class="tag">Elasticsearch</span></div><span class="arrow">🔒</span></div>
     </div>
-<div class="card reveal" data-cat="full">
-      <span class="ct">FinTech · 🔒 Private</span>
-      <h3>Rubicon Liberty Group</h3>
-      <p>Institutional-grade digital-asset platform on Next.js 15 — a live crypto markets terminal with sortable tables and 7-day sparklines off a cached CoinGecko proxy, JWT sessions in httpOnly cookies, and a protected dashboard valuing user portfolios at live prices on Neon Postgres.</p>
-      <div class="meta"><div class="tags"><span class="tag">Next.js 15</span><span class="tag">JWT</span><span class="tag">Neon Postgres</span></div><span class="arrow">🔒</span></div>
-    </div>
 
-<a class="card reveal" data-cat="full" href="https://pizzalabgroup.com" target="_blank" rel="noopener">
-      <span class="ct">Client Work · 🇪🇸 Estepona · Live</span>
-      <h3>Pizza Lab</h3>
-      <p>Landing page and admin panel for a real pizzeria in Estepona, Spain — colours and menu lifted from the printed menu, with a no-code admin CMS where the owner edits text, menu items, hours, and photos and the site updates instantly.</p>
-      <div class="meta"><div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">CMS</span></div><span class="arrow">↗</span></div>
-    </a>
   </div>
 
   </section>
@@ -1238,13 +1253,14 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 </section>
 
 <footer id="contact">
-  <div class="kicker reveal">05 /// Got a role, a contract, or a wild idea?</div>
+  <div class="kicker reveal">07 /// Got a role, a contract, or a wild idea?</div>
   <a class="mail reveal" href="mailto:arnobrizwan23@gmail.com">arnobrizwan23<br>@gmail.com ↗</a>
   <div class="foot-row">
     <div class="foot-links">
       <a href="https://github.com/Arnobrizwan" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/arnob-rizwan-033704239/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="tel:+60177260362">+60 17-726 0362</a>
+      <a href="https://wa.me/60177260362" target="_blank" rel="noopener">WhatsApp +60 17-726 0362</a>
+      <a href="tel:+8801346072553">+880 1346-072553</a>
       <a href="docs/Arnob_Rizwan_Ahmad_Resume.pdf" download>Resume PDF</a>
     </div>
     <div class="foot-note">© 2026 Arnob Rizwan Ahmad · Chittagong, BD · Built loud on purpose.</div>
@@ -1252,6 +1268,15 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 </footer>
 
 <script>
+// mobile menu
+const navT=document.querySelector('.nav-toggle'),navL=document.getElementById('nav-links');
+navT.addEventListener('click',()=>{const o=navL.classList.toggle('open');navT.setAttribute('aria-expanded',o);navT.setAttribute('aria-label',o?'Close menu':'Open menu')});
+navL.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navL.classList.remove('open');navT.setAttribute('aria-expanded','false');navT.setAttribute('aria-label','Open menu')}));
+
+// sticky mobile CTA: only between hero and contact
+{const seen=new Set();const mo=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));document.body.classList.toggle('show-mcta',seen.size===0)});
+mo.observe(document.querySelector('.hero'));mo.observe(document.querySelector('footer'));}
+
 // scroll reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
@@ -1262,7 +1287,7 @@ const co=new IntersectionObserver(es=>es.forEach(e=>{
   const el=e.target,end=+el.dataset.count,t0=performance.now(),dur=1400;
   (function step(t){
     const p=Math.min((t-t0)/dur,1),v=Math.round(end*(1-Math.pow(1-p,3)));
-    el.textContent=v+(end===14?'+':'');
+    el.textContent=v;
     if(p<1)requestAnimationFrame(step);
   })(t0);
 }),{threshold:.5});
