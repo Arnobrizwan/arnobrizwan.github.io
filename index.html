@@ -333,6 +333,10 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 }
 .hero>*{position:relative;z-index:1}
 .hero>.sticker{position:absolute;z-index:5}
+.hero>.hero-photo{position:absolute;z-index:2;right:clamp(20px,5vw,64px);top:clamp(40px,8vh,90px);width:clamp(240px,24vw,360px);height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;border:1px solid rgba(242,239,230,.18);box-shadow:0 30px 80px rgba(0,0,0,.5);background:#151515}
+@media(min-width:1200px){.hero>.sticker{top:calc(clamp(40px,8vh,90px) + clamp(240px,24vw,360px)*1.25 - 96px);right:calc(clamp(20px,5vw,64px) + clamp(240px,24vw,360px) - 72px)}}
+.hero>.hero-avatar{display:none;width:104px;height:104px;border-radius:50%;object-fit:cover;margin:0 0 24px;border:2px solid var(--acid);background:#151515}
+@media(max-width:1199px){.hero>.hero-photo{display:none}.hero>.hero-avatar{display:block}}
 
 .card{transform-style:preserve-3d}
 @keyframes cardin{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
@@ -410,6 +414,8 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <span>Chittagong, Bangladesh → Remote everywhere</span>
     <span>/// AI · LLM · Agents · Evaluation</span>
   </div>
+  <img class="hero-avatar" src="assets/arnob-face.webp" alt="Arnob Rizwan Ahmad" width="240" height="240" loading="lazy" decoding="async">
+  <img class="hero-photo" src="assets/arnob.webp" alt="Arnob Rizwan Ahmad" width="560" height="700" fetchpriority="high" decoding="async">
   <div class="sticker" aria-hidden="true">Open<br>to work<br>★ 2026 ★</div>
   <h1>
     <span class="row"><span>Arnob</span></span>
@@ -417,11 +423,9 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <span class="row"><span>Ahmad<span class="zap">.</span></span></span>
   </h1>
   <p class="hero-sub">
-    <b>AI/LLM engineer</b> building agentic workflows, RAG and evaluation infrastructure &mdash; and the backend they run on.
-    Currently <b>ERP Developer</b> at Hirdaramani Bangladesh. Previously Agentic AI Engineer at BLOOMTECH, ML Engineer
-    for a US news-intelligence platform and founding backend engineer at an AI storage startup. Software Engineering graduate of
-    <b>Universiti Teknologi Malaysia</b> (July 2026, First Class), shipping for clients in the <b>US, Luxembourg, Spain, Bangladesh and Malaysia</b>
-    long before the degree finished.
+    <b>AI/LLM engineer</b> building agentic workflows, RAG and evaluation infrastructure, and the backend they run on.
+    Currently <b>ERP Developer</b> at Hirdaramani Bangladesh, previously Agentic AI Engineer at BLOOMTECH and ML Engineer for a US news-intelligence platform.
+    Software Engineering graduate of <b>Universiti Teknologi Malaysia</b> (July 2026, First Class), shipping for clients in the <b>US, Luxembourg, Spain, Bangladesh and Malaysia</b>.
   </p>
   <div class="hero-actions">
     <a class="btn btn-solid" href="docs/Arnob_Rizwan_Ahmad_Resume.pdf" download>Download Resume ↓</a>
@@ -578,7 +582,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Free Tool &middot; No Login</span>
       <h3>ShipCheck</h3>
       <span class="live-url">shipcheck-gold.vercel.app</span>
-      <p>Paste a website, an App Store link or a Google Play package and get a scored health check with the exact fix for every finding. Websites are scored across seven weighted categories (security headers, performance, SEO, accessibility, technical health, tidiness, plus a 20-point launch checklist) with Lighthouse behind the performance numbers; store listings are judged on listing quality, ratings, update cadence, trust signals and reach, read straight from the iTunes lookup API and Google Play&rsquo;s page data. I calibrated the scoring against youhadonejob.dev on 30 real sites: of the 26 both tools could scan, all landed within 10 points and 24 within 5. No npm dependencies and no build step, just vanilla modules and one serverless function, and it scores itself in the 90s.</p>
+      <p>Paste a website, an App Store link or a Google Play package and get a scored health check with the exact fix for every finding. Websites are scored across seven categories, with Lighthouse behind the performance numbers. I calibrated it against youhadonejob.dev, and on 26 real sites every score landed within 10 points.</p>
       <div class="tags"><span class="tag">Node.js</span><span class="tag">Serverless</span><span class="tag">Lighthouse</span><span class="tag">Web Security</span><span class="tag">Vercel</span></div>
       <span class="live-open">Open the tool ↗</span>
     </a>
@@ -596,7 +600,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge is-app"><span class="live-dot"></span>In Production &middot; Client Work &middot; Malaysia 🇲🇾</span>
       <h3>ATURRR</h3>
       <span class="live-url">Private client deployment &middot; Android app in client testing</span>
-      <p>Lead management platform for a Malaysian financing consultancy that matches customers with banks for home, refinance, personal and business financing. I built all three parts: a Flutter customer app, a React web portal for office staff, referral agents and bankers, and the Firebase backend behind them. Each role only sees the cases it is allowed to see, enforced on the server rather than just hidden in the UI. The app runs in English, Malay, Tamil and Chinese.</p>
+      <p>Lead management platform for a Malaysian financing consultancy that matches customers with banks. I built the Flutter customer app, the React portal for staff, agents and bankers, and the Firebase backend, with role access enforced on the server. It runs in English, Malay, Tamil and Chinese.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore</span></div>
     </div>
 
@@ -614,7 +618,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge is-app"><span class="live-dot"></span>Employer Project &middot; Bangladesh 🇧🇩 &middot; 🔒 No public link</span>
       <h3>Lab Test Management System</h3>
       <span class="live-url">Hirdaramani Group &middot; internal system</span>
-      <p>An internal system I built for Hirdaramani Group that takes lab test requests from submission through approval, lab work, reporting and payment, with role-based access, email notifications and printable reports in five languages. Built database-first on SQL Server, with a Clean Architecture and CQRS backend in ASP.NET Core and an Angular front end, covered by automated tests.</p>
+      <p>Internal system for Hirdaramani Group that takes lab test requests from submission through approval, lab work, reporting and payment, with printable reports in five languages. ASP.NET Core with Clean Architecture and CQRS, an Angular front end and SQL Server, covered by automated tests.</p>
       <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Angular</span><span class="tag">SQL Server</span><span class="tag">CQRS</span><span class="tag">EF Core</span></div>
     </div>
 
@@ -632,7 +636,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Real-Time &middot; Offline-First</span>
       <h3>Relay</h3>
       <span class="live-url">taghyeer-chat-rust.vercel.app</span>
-      <p>Real-time direct and group chat on Next.js, with an offline outbox that survives a reload. Every wire shape is normalised at one network boundary so no component ever sees the raw API, sends go over REST rather than the socket because the socket ack carries no body to reconcile against, and tabs signed in as the same user stay in sync over <code>BroadcastChannel</code> and <code>navigator.locks</code>. The backend sleeps on a free tier, so the landing page starts waking it while you read and a slow request shows a counter instead of an unexplained spinner. 91 unit tests, clean lint and type check.</p>
+      <p>Real-time direct and group chat on Next.js with an offline outbox that survives a reload. Tabs signed in as the same user stay in sync, and since the free-tier backend sleeps, the landing page wakes it up while you read. 91 unit tests, clean lint and type check.</p>
       <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Socket.io</span><span class="tag">TanStack Query</span><span class="tag">Zustand</span></div>
       <span class="live-open">Open the app ↗</span>
     </a>
@@ -642,7 +646,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live &middot; Local LLM &middot; No Login</span>
       <h3>StockTrade</h3>
       <span class="live-url">stocktrade-topaz.vercel.app</span>
-      <p>A stock social platform where community posts are scored for insight quality and reputation-weighted sentiment aggregates into a per-ticker Smart Signal, with sentiment run through a local LLM over Ollama rather than a paid API. Yahoo Finance blocks server and CI traffic and sends no CORS headers, so rather than dress that up as live data the app falls back to a timestamped snapshot and says so in a banner, with <code>/api/meta</code> reporting which mode is active. The news feed and the signals aggregator still run live. Every dependency degrades instead of crashing when it is missing.</p>
+      <p>Stock social platform that scores community posts for insight quality and rolls reputation-weighted sentiment into a per-ticker Smart Signal, using a local LLM over Ollama instead of a paid API. When Yahoo Finance blocks live prices, it falls back to a timestamped snapshot and says so in a banner.</p>
       <div class="tags"><span class="tag">Next.js 16</span><span class="tag">Prisma</span><span class="tag">Ollama</span><span class="tag">Clerk</span><span class="tag">RSS</span></div>
       <span class="live-open">Visit site ↗</span>
     </a>
@@ -672,7 +676,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live · Product Build · Crypto Markets</span>
       <h3>Rubicon Liberty Group</h3>
       <span class="live-url">crypto-rlg.vercel.app</span>
-      <p>Digital asset management and markets platform, built as a self-directed product rather than a live financial service. Live pricing across 50 assets pulled from CoinGecko and refreshed every 60 seconds, behind a full markets screen &mdash; global market cap, 24h volume and BTC dominance, asset search, gainers / losers / top-volume filters, and a seven-day sparkline per asset. Invite-coded registration gates a signed-in markets area. Demo status, data provenance and risk warning are disclosed in the footer rather than papered over.</p>
+      <p>Digital asset markets platform, built as a self-directed product and not a live financial service. Live pricing for 50 assets from CoinGecko, refreshed every 60 seconds, with market stats, search, gainer and loser filters and a seven-day sparkline per asset. Demo status and risk warnings are stated in the footer.</p>
       <div class="tags"><span class="tag">Next.js</span><span class="tag">CoinGecko API</span><span class="tag">Live Data</span><span class="tag">Vercel</span></div>
       <span class="live-open">Visit site ↗</span>
     </a>
@@ -682,7 +686,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live · Bangla-First · Bangladesh 🇧🇩</span>
       <h3>Al-Ibadah</h3>
       <span class="live-url">alibadahfoundation.com</span>
-      <p>Bangla-first Islamic reference site for Bangladesh — the full Quran (114 surahs, 6,236 ayahs) with five Bangla translations, three tafsirs and ten reciters, 36,432 hadith across 8 collections, the daily duas, prayer times and qibla for all 64 districts, plus zakat, tasbih and Hijri calendar tools. The <code>/ask</code> assistant runs entirely in the browser: BM25 + trigram retrieval over a hand-written, source-cited corpus that refuses rather than invents. Ships as a fully static build with 327 prerendered routes on a custom domain, and lectures play inside the site instead of sending readers off to YouTube. Donations and premium go through a PipraPay checkout that accepts nine Bangladeshi mobile wallets, including bKash, Nagad and Rocket. A Flutter companion app on the same corpus is in closed testing on Google Play.</p>
+      <p>Bangla-first Islamic reference site: the full Quran with five Bangla translations and ten reciters, 36,432 hadith, daily duas, and prayer times and qibla for all 64 districts. The <code>/ask</code> assistant runs entirely in the browser and refuses rather than invents. Donations go through PipraPay with bKash, Nagad and Rocket, and a Flutter companion app is in closed testing.</p>
       <div class="tags"><span class="tag">React 18</span><span class="tag">Vite</span><span class="tag">TypeScript</span><span class="tag">Static Prerender</span></div>
       <span class="live-open">Visit site ↗</span>
     </a>
@@ -781,7 +785,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge is-app"><span class="live-dot"></span>In Production · Client App · iOS TestFlight</span>
       <h3>ShopLocalr</h3>
       <span class="live-url">Private client deployment · USA 🇺🇸</span>
-      <p>A Flutter local-business discovery app with explorer, business and admin roles. Explorers find shops and deals, redeem them with a checkout code, collect loyalty rewards, leave reviews, message shops and post on a moderated community board, with Gemini-backed recommendations and offline-first caching. Version 2 moves it off Firebase onto a self-hosted Dart API I built, with access rules enforced on the server and live updates over WebSocket. It now has a full redesign with light and dark mode, and version 1.0.2 adds push notifications and is in TestFlight ahead of App Store review.</p>
+      <p>Flutter local-business discovery app with explorer, business and admin roles: deals with checkout codes, loyalty rewards, reviews, shop messaging and Gemini-backed recommendations. Version 2 moves it off Firebase onto a self-hosted Dart API I built, with live updates over WebSocket. Version 1.0.2 is in TestFlight ahead of App Store review.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart API</span><span class="tag">WebSocket</span><span class="tag">Docker</span><span class="tag">GCP</span></div>
     </div>
 
@@ -799,7 +803,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge is-app"><span class="live-dot"></span>Live on Google Play &middot; Joint Project</span>
       <h3>Support Welfare Companies</h3>
       <span class="live-url">Google Play &middot; Android &middot; source repo private</span>
-      <p>Employers ranked on how they treat the people who work for them &mdash; a joint project, built with a collaborator and shipped to Google Play. A Flutter Android app for the public sits over one Firebase backend alongside a React + TypeScript reviewer panel. Companies score on five welfare criteria (fair minimum wage, profit share, overtime, workplace discrimination, and insurance and pensions) and the overall score is the mean of all five, so no single criterion can carry a company. It ranks good, better, best rather than blacklisting. A survey answer is a claim, not a rating: a reviewer checks it against public evidence before anything publishes. Google Sign-In plus a disposable-domain blocklist keeps the ballot box clean, and Firestore rules let the public create a schema-validated submission but never read it back or revise it. When AdMob has no ad to fill a slot, a self-serve booking system takes over: a local business submits an ad from inside the app, a reviewer approves and schedules it from the panel, and views and taps are counted per ad. Unity bidding runs through AdMob mediation alongside Meta and AppLovin adapters.</p>
+      <p>A joint project, live on Google Play, that ranks employers on how they treat their workers. A Flutter app for the public and a React + TypeScript reviewer panel share one Firebase backend. Companies are scored on five welfare criteria, and every survey answer is checked against public evidence before it publishes.</p>
       <div class="live-dl">
         <a href="https://play.google.com/store/apps/details?id=com.supportwelfare.welfare_companies" target="_blank" rel="noopener">↗ Google Play &middot; Android</a>
       </div>
@@ -821,7 +825,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <span class="live-badge"><span class="live-dot"></span>Live &middot; 15 Interactive Demos &middot; 494 Tests &middot; Zero Paid APIs</span>
     <h3>applied-llm-systems</h3>
     <span class="live-url">applied-llm-systems.vercel.app &middot; github.com/Arnobrizwan/applied-llm-systems</span>
-    <p>Fifteen production-shaped LLM systems in one codebase, sharing a dependency-free core: providers, embeddings, BM25, a vector store, token accounting, tracing and retry. Every demo and every test runs offline on a stock Python install &mdash; no key, no quota, nothing to expire &mdash; and a CI gate fails the build if any runtime file imports a third-party package. The default model is a deterministic offline reference implementation that can be told to corrupt a fixed share of its responses, which is how the schema-repair and guardrail paths are measured rather than asserted. Point one environment variable at Ollama or any OpenAI-compatible endpoint and the same code runs against a real model.</p>
+    <p>Fifteen production-shaped LLM systems in one codebase on a dependency-free Python core. Every demo and test runs offline with no API key, and a CI gate fails the build if any runtime file imports a third-party package. Point one environment variable at Ollama or any OpenAI-compatible endpoint and the same code runs against a real model.</p>
     <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Evals</span><span class="tag">Agents</span><span class="tag">Guardrails</span><span class="tag">Observability</span></div>
     <span class="live-open">Open the live demos ↗</span>
   </a>
