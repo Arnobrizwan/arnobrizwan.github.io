@@ -574,7 +574,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   <div class="sec-head reveal">
     <span class="idx">02</span>
     <h2>Live Projects</h2>
-    <p class="tail">Not repos — shipped products. Sites you can open right now and apps you can install on your phone.</p>
+    <p class="tail">Public sites, mobile apps and client work. Testing builds and private deployments are labelled clearly.</p>
   </div>
   <div class="live-grid">
     <a class="live-card reveal" href="https://shipcheck-gold.vercel.app" target="_blank" rel="noopener">
@@ -586,12 +586,31 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <div class="tags"><span class="tag">Node.js</span><span class="tag">Serverless</span><span class="tag">Lighthouse</span><span class="tag">Web Security</span><span class="tag">Vercel</span></div>
       <span class="live-open">Open the tool ↗</span>
     </a>
-    <div class="live-card reveal no-link">
+    <div class="live-card reveal no-link" id="project-fazar-mate">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Next.js · PostgreSQL</span><span class="ph-n">Fazar Mate</span><span class="ph-l">Android closed testing · iOS TestFlight</span></div>
+      <span class="live-badge is-app"><span class="live-dot"></span>Client App &middot; Store Testing</span>
+      <h3>Fazar Mate</h3>
+      <span class="live-url">Dawah Circle &middot; no public store release yet</span>
+      <p>Fajr prayer-tracking app with photo check-ins, streaks, points and qaza history. I built the Flutter app and its Next.js admin/API backend on PostgreSQL. Every new photo waits for manual review before points are awarded. Optional Google linking preserves history and points while guest mode stays available.</p>
+      <div class="tags"><span class="tag">Flutter</span><span class="tag">Riverpod</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Google Sign-In</span></div>
+    </div>
+
+    <a class="live-card reveal" id="project-garowal" href="https://garowal.com" target="_blank" rel="noopener">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Founder · Product &amp; Technology</span><span class="ph-n">Garowal Express</span><span class="ph-l">Public landing · Prelaunch venture</span></div>
+      <span class="live-badge"><span class="live-dot"></span>Own Venture &middot; Prelaunch &middot; Bangladesh</span>
+      <h3>Garowal Express</h3>
+      <span class="live-url">garowal.com &middot; pilot waitlist</span>
+      <p>Dhaka-first courier venture for Facebook and small online sellers. As founder, I lead product and technology, from the Bangla-first public site to the merchant and rider experience. The pilot landing page is live; the operational platform is still in development, not a launched delivery service.</p>
+      <div class="tags"><span class="tag">Product Development</span><span class="tag">Courier Operations</span><span class="tag">Bangla-First UX</span></div>
+      <span class="live-open">View the pilot landing page ↗</span>
+    </a>
+
+    <div class="live-card reveal no-link" id="project-aturrr">
       <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · React + Vite · Cloud Functions</span><span class="ph-n">ATURRR</span><span class="ph-l">🔒 Private client build</span></div>
-      <span class="live-badge is-app"><span class="live-dot"></span>In Production &middot; Client Work &middot; Malaysia 🇲🇾</span>
+      <span class="live-badge is-app"><span class="live-dot"></span>Client Build &middot; Mobile Testing &middot; Malaysia</span>
       <h3>ATURRR</h3>
       <span class="live-url">Private client deployment &middot; Android app in client testing</span>
-      <p>Lead management platform for a Malaysian financing consultancy that matches customers with banks. I built the Flutter customer app, the React portal for staff, agents and bankers, and the Firebase backend, with role access enforced on the server. It runs in English, Malay, Tamil and Chinese.</p>
+      <p>Lead management platform for a Malaysian financing consultancy. I built the Flutter customer app, role-based React portal and Firebase backend. Recent work added invoices, receipts and quotations with PDF export, plus branded transactional email and support delivery. It runs in English, Malay, Tamil and Chinese.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore</span></div>
     </div>
 
@@ -677,7 +696,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-badge"><span class="live-dot"></span>Live · Bangla-First · Bangladesh 🇧🇩</span>
       <h3>Al-Ibadah</h3>
       <span class="live-url">alibadahfoundation.com</span>
-      <p>Bangla-first Islamic reference site: the full Quran with five Bangla translations and ten reciters, 36,432 hadith, daily duas, and prayer times and qibla for all 64 districts. The <code>/ask</code> assistant runs entirely in the browser and refuses rather than invents. Donations go through PipraPay with bKash, Nagad and Rocket, and a Flutter companion app is in closed testing.</p>
+      <p>Bangla-first Quran, hadith, dua and prayer-reference site with a browser-based question assistant. Recent work added configurable Durud reminders to the Flutter companion and a unified dashboard for content, app configuration and broadcasts. The public site is live; the Android companion remains in closed testing.</p>
       <div class="tags"><span class="tag">React 18</span><span class="tag">Vite</span><span class="tag">TypeScript</span><span class="tag">Static Prerender</span></div>
       <span class="live-open">Visit site ↗</span>
     </a>
@@ -773,10 +792,10 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 
     <div class="live-card reveal no-link">
       <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Dart API · WebSocket</span><span class="ph-n">ShopLocalr</span><span class="ph-l">🔒 iOS TestFlight</span></div>
-      <span class="live-badge is-app"><span class="live-dot"></span>In Production · Client App · iOS TestFlight</span>
+      <span class="live-badge is-app"><span class="live-dot"></span>Live Backend &middot; Mobile Store Testing</span>
       <h3>ShopLocalr</h3>
       <span class="live-url">Private client deployment · USA 🇺🇸</span>
-      <p>Flutter local-business discovery app with explorer, business and admin roles: deals with checkout codes, loyalty rewards, reviews, shop messaging and Gemini-backed recommendations. Version 2 moves it off Firebase onto a self-hosted Dart API I built, with live updates over WebSocket. Version 1.0.2 is in TestFlight ahead of App Store review.</p>
+      <p>Flutter local-business discovery app with explorer, business and admin roles, deals, loyalty rewards, reviews and shop messaging. I built its self-hosted Dart API and WebSocket updates, then deployed a compatible backend upgrade without resetting existing users and restored nearby-shop and deal discovery. Android closed-test and iOS TestFlight builds support release testing.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart API</span><span class="tag">WebSocket</span><span class="tag">Docker</span><span class="tag">GCP</span></div>
     </div>
 
@@ -919,7 +938,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
   <div class="sec-head reveal">
     <span class="idx">04</span>
     <h2>Projects</h2>
-    <p class="tail">Thirteen builds I'd defend in a code review — agents, LLM evaluation infrastructure, MLOps, and mobile. The rest of the archive lives on <a href="https://github.com/Arnobrizwan" target="_blank" rel="noopener">GitHub</a>.</p>
+    <p class="tail">Selected builds and open-source contributions across agents, LLM infrastructure, MLOps and mobile. The rest of the archive lives on <a href="https://github.com/Arnobrizwan" target="_blank" rel="noopener">GitHub</a>.</p>
   </div>
   <div class="filters reveal">
     <button class="fbtn on" data-f="all">All</button>
@@ -929,6 +948,13 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     <button class="fbtn" data-f="full">Full-Stack</button>
   </div>
   <div class="grid">
+
+    <a class="card reveal" id="project-orca-contribution" data-cat="mobile" href="https://github.com/stablyai/orca/pull/29068" target="_blank" rel="noopener">
+      <span class="ct">Open Source &middot; Open Pull Request</span>
+      <h3>Orca Mobile Contribution</h3>
+      <p>React Native fixes that preserve typed commit messages, discard stale GitHub task pages and give icon-only controls accessible names. The pull request includes regression tests and is still open, not merged.</p>
+      <div class="meta"><div class="tags"><span class="tag">React Native</span><span class="tag">TypeScript</span><span class="tag">Accessibility</span></div><span class="arrow">↗</span></div>
+    </a>
 
     <a class="card reveal" data-cat="agents ai" href="https://github.com/Arnobrizwan/Autonomous-ML-Agent" target="_blank" rel="noopener">
       <span class="ct">AutoML · Agents</span>
@@ -1257,6 +1283,8 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <a href="https://wa.me/60177260362" target="_blank" rel="noopener">WhatsApp +60 17-726 0362</a>
       <a href="tel:+8801346072553">+880 1346-072553</a>
       <a href="docs/Arnob_Rizwan_Ahmad_Resume.pdf" download>Resume PDF</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Site terms</a>
     </div>
     <div class="foot-note">© 2026 Arnob Rizwan Ahmad · Chittagong, BD · Built loud on purpose.</div>
   </div>
