@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARNOB RIZWAN AHMAD — AI / LLM Engineer</title>
-<meta name="description" content="Arnob Rizwan Ahmad — AI/LLM engineer building agentic workflows, RAG and evaluation infrastructure. ERP Developer at Hirdaramani, previously Agentic AI Engineer at BLOOMTECH, shipping products across 5 countries.">
+<meta name="description" content="Arnob Rizwan Ahmad — AI/LLM and full-stack engineer. ERP Developer at Hirdaramani Bangladesh, building web platforms, mobile apps and LLM systems for clients.">
 <meta property="og:title" content="Arnob Rizwan Ahmad — AI / LLM Engineer">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arnobrizwan.github.io/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:image" content="https://arnobrizwan.github.io/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:image" content="https://arnobrizwan.github.io/og-image.png">
-<meta property="og:description" content="AI/LLM engineer building agentic workflows, RAG and evaluation infrastructure. ERP Developer at Hirdaramani. Shipping across 5 countries.">
+  <meta property="og:image" content="https://arnobrizwan.github.io/og-image.png?v=20261110">
+  <meta property="og:image:width" content="2400">
+  <meta property="og:image:height" content="1260">
+  <meta name="twitter:image" content="https://arnobrizwan.github.io/og-image.png?v=20261110">
+<meta property="og:description" content="AI/LLM and full-stack engineer. ERP Developer at Hirdaramani Bangladesh, building web platforms, mobile apps and LLM systems for clients.">
 <link rel="canonical" href="https://arnobrizwan.github.io/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -37,12 +37,12 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 ::selection{background:var(--acid);color:var(--ink)}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{
   background:var(--ink);
   color:var(--paper);
   font-family:'Archivo',sans-serif;
-  overflow-x:hidden;
+  overflow-x:clip;
 }
 
 /* ---------- grain ---------- */
@@ -435,7 +435,7 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
 </header>
 
 <div class="stats reveal">
-  <div class="stat"><div class="num" data-count="47">47</div><div class="lbl">Projects On This Page</div></div>
+  <div class="stat"><div class="num" data-count="52">52</div><div class="lbl">Projects On This Page</div></div>
   <div class="stat"><div class="num" data-count="5">5</div><div class="lbl">Countries Shipped To</div></div>
   <div class="stat"><div class="num" data-count="40">40</div><div class="lbl">Schools On My App</div></div>
   <div class="stat"><div class="num" data-count="10">10</div><div class="lbl">AI Agents, One Platform</div></div>
@@ -586,12 +586,16 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <div class="tags"><span class="tag">Node.js</span><span class="tag">Serverless</span><span class="tag">Lighthouse</span><span class="tag">Web Security</span><span class="tag">Vercel</span></div>
       <span class="live-open">Open the tool ↗</span>
     </a>
-    <div class="live-card reveal no-link" id="project-fazar-mate">
-      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Next.js · PostgreSQL</span><span class="ph-n">Fazar Mate</span><span class="ph-l">Android closed testing · iOS TestFlight</span></div>
-      <span class="live-badge is-app"><span class="live-dot"></span>Client App &middot; Store Testing</span>
+    <div class="live-card reveal" id="project-fazar-mate">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Next.js · PostgreSQL</span><span class="ph-n">Fazar Mate</span><span class="ph-l">↗ App Store · Google Play</span></div>
+      <span class="live-badge is-app"><span class="live-dot"></span>Live on Stores &middot; Client App</span>
       <h3>Fazar Mate</h3>
-      <span class="live-url">Dawah Circle &middot; no public store release yet</span>
-      <p>Fajr prayer-tracking app with photo check-ins, streaks, points and qaza history. I built the Flutter app and its Next.js admin/API backend on PostgreSQL. Every new photo waits for manual review before points are awarded. Optional Google linking preserves history and points while guest mode stays available.</p>
+      <span class="live-url">Dawah Circle &middot; App Store &amp; Google Play</span>
+      <p>Fajr alarm and prayer-tracking app with live camera check-ins, streaks, points and qaza history. I built the Flutter app and its Next.js admin/API backend on PostgreSQL. New check-in photos are reviewed before points are awarded, and optional Google linking keeps history and points while guest mode stays available.</p>
+      <div class="live-dl">
+        <a href="https://apps.apple.com/us/app/fazar-mate-fajr-alarm/id6823421762" target="_blank" rel="noopener">↗ App Store &middot; iPhone</a>
+        <a href="https://play.google.com/store/apps/details?id=com.dawahcircle.fazarmate" target="_blank" rel="noopener">↗ Google Play &middot; Android</a>
+      </div>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">Riverpod</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Google Sign-In</span></div>
     </div>
 
@@ -605,14 +609,45 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
       <span class="live-open">View the pilot landing page ↗</span>
     </a>
 
-    <div class="live-card reveal no-link" id="project-aturrr">
-      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · React + Vite · Cloud Functions</span><span class="ph-n">ATURRR</span><span class="ph-l">🔒 Private client build</span></div>
-      <span class="live-badge is-app"><span class="live-dot"></span>Client Build &middot; Mobile Testing &middot; Malaysia</span>
+    <a class="live-card reveal" id="project-unionspare" href="https://unionspare.com" target="_blank" rel="noopener">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Next.js · Cloudflare Workers · D1 · R2</span><span class="ph-n">Union Spare</span><span class="ph-l">Bangla / English storefront</span></div>
+      <span class="live-badge"><span class="live-dot"></span>Live &middot; E-commerce &middot; Bangladesh 🇧🇩</span>
+      <h3>Union Spare</h3>
+      <span class="live-url">unionspare.com</span>
+      <p>Online shop for bike parts and LED headlights in Bangladesh. It opens in Bangla with an English toggle and light, dark or system themes. I built it on Next.js with OpenNext on Cloudflare Workers, using D1 for products and orders and R2 for media, plus an admin area for products, photo galleries, videos and pre-orders. Visitor analytics are first-party and cookieless.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">OpenNext</span><span class="tag">Cloudflare D1</span><span class="tag">R2</span><span class="tag">Workers AI</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" id="project-river-homeschool" href="https://riverhomeschool.com" target="_blank" rel="noopener">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Next.js · NestJS · Flutter</span><span class="ph-n">River Homeschool</span><span class="ph-l">Website live · apps in testing</span></div>
+      <span class="live-badge"><span class="live-dot"></span>Live &middot; Client Work &middot; Education</span>
+      <h3>River Homeschool</h3>
+      <span class="live-url">riverhomeschool.com &middot; Android &amp; iOS apps in tester builds</span>
+      <p>Website and learning portal for a live online homeschool serving students in Bangladesh and abroad, in English and Bangla. I built the Next.js site, a NestJS API on Postgres and Flutter apps, with student, teacher, parent and admin dashboards, class check-ins, and an admin area where staff update teachers, gallery, blog, books and programs without code. The website is live; the mobile apps are with testers and not yet on public stores.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span class="tag">Flutter</span><span class="tag">Cloudflare Workers</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" id="project-astrielle" href="https://astrielle.org" target="_blank" rel="noopener">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Next.js · Cloudflare Workers · D1</span><span class="ph-n">Astrielle</span><span class="ph-l">English / Bangla · youth organisation</span></div>
+      <span class="live-badge"><span class="live-dot"></span>Live &middot; Client Work &middot; Chittagong 🇧🇩</span>
+      <h3>Astrielle</h3>
+      <span class="live-url">astrielle.org</span>
+      <p>Website for a youth-led community organisation in Chittagong, in English and Bangla with light and dark themes. I lead the technical build on Next.js with OpenNext on Cloudflare Workers, D1 and R2: division, event, team, gallery and news pages, blood donor and blood request flows that show only aggregate availability in public, membership and volunteer forms, and an admin panel.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">OpenNext</span><span class="tag">Cloudflare D1</span><span class="tag">R2</span><span class="tag">Turnstile</span></div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
+
+    <a class="live-card reveal" id="project-aturrr" href="https://aturrr.com" target="_blank" rel="noopener">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · React + Vite · Cloud Functions</span><span class="ph-n">ATURRR</span><span class="ph-l">Public site + client portals</span></div>
+      <span class="live-badge"><span class="live-dot"></span>Live &middot; Client Work &middot; Malaysia 🇲🇾</span>
       <h3>ATURRR</h3>
-      <span class="live-url">Private client deployment &middot; Android app in client testing</span>
-      <p>Lead management platform for a Malaysian financing consultancy. I built the Flutter customer app, role-based React portal and Firebase backend. Recent work added invoices, receipts and quotations with PDF export, plus branded transactional email and support delivery. It runs in English, Malay, Tamil and Chinese.</p>
+      <span class="live-url">aturrr.com &middot; mobile app not yet on public stores</span>
+      <p>Customer and staff platform for a Malaysian financing consultancy (a consultancy, not a lender). I built the public site, role-based React portals for customers, office staff, agents and bankers, a Flutter customer app and the Firebase backend. Recent work added invoices, receipts and quotations with PDF export, office visit booking and four languages: English, Malay, Chinese and Tamil. The mobile app is still in testing.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">React + Vite</span><span class="tag">Cloud Functions</span><span class="tag">Firestore</span></div>
-    </div>
+      <span class="live-open">Visit site ↗</span>
+    </a>
 
     <div class="live-card reveal no-link">
       <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · React + Vite · Cloud Functions</span><span class="ph-n">RinggitNow</span><span class="ph-l">🔒 Private client build</span></div>
@@ -624,12 +659,12 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
-      <div class="live-ph" aria-hidden="true"><span class="ph-k">ASP.NET Core · Angular · SQL Server</span><span class="ph-n">Lab Test Management System</span><span class="ph-l">🔒 Internal employer system</span></div>
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">.NET 10 · Angular · SQL Server · IIS</span><span class="ph-n">Lab Test Management System</span><span class="ph-l">🔒 Internal employer system</span></div>
       <span class="live-badge is-app"><span class="live-dot"></span>Employer Project &middot; Bangladesh 🇧🇩 &middot; 🔒 No public link</span>
       <h3>Lab Test Management System</h3>
-      <span class="live-url">Hirdaramani Group &middot; internal system</span>
-      <p>Internal system for Hirdaramani Group that takes lab test requests from submission through approval, lab work, reporting and payment, with printable reports in five languages. ASP.NET Core with Clean Architecture and CQRS, an Angular front end and SQL Server, covered by automated tests.</p>
-      <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Angular</span><span class="tag">SQL Server</span><span class="tag">CQRS</span><span class="tag">EF Core</span></div>
+      <span class="live-url">Hirdaramani Group &middot; company server deployment &middot; no public link</span>
+      <p>Internal system for Hirdaramani Group that takes lab test requests from submission through approval routing, lab work, reporting and payment, with printable reports in five languages. ASP.NET Core on .NET 10 with Clean Architecture and CQRS, an Angular front end and SQL Server, covered by automated tests and packaged for the company's own Windows Server and IIS.</p>
+      <div class="tags"><span class="tag">.NET 10</span><span class="tag">ASP.NET Core</span><span class="tag">Angular</span><span class="tag">SQL Server</span><span class="tag">CQRS</span><span class="tag">EF Core</span></div>
     </div>
 
     <div class="live-card reveal no-link">
@@ -791,12 +826,21 @@ footer .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;text-transf
     </div>
 
     <div class="live-card reveal no-link">
-      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Dart API · WebSocket</span><span class="ph-n">ShopLocalr</span><span class="ph-l">🔒 iOS TestFlight</span></div>
-      <span class="live-badge is-app"><span class="live-dot"></span>Live Backend &middot; Mobile Store Testing</span>
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">Flutter · Dart API · WebSocket</span><span class="ph-n">ShopLocalr</span><span class="ph-l">🔒 iOS in App Review · Android closed test</span></div>
+      <span class="live-badge is-app"><span class="live-dot"></span>Live Backend &middot; Apps in Store Review</span>
       <h3>ShopLocalr</h3>
-      <span class="live-url">Private client deployment · USA 🇺🇸</span>
+      <span class="live-url">Private client deployment &middot; no public store release yet &middot; USA 🇺🇸</span>
       <p>Flutter local-business discovery app with explorer, business and admin roles, deals, loyalty rewards, reviews and shop messaging. I built its self-hosted Dart API and WebSocket updates, then deployed a compatible backend upgrade without resetting existing users and restored nearby-shop and deal discovery. Android closed-test and iOS TestFlight builds support release testing.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart API</span><span class="tag">WebSocket</span><span class="tag">Docker</span><span class="tag">GCP</span></div>
+    </div>
+
+    <div class="live-card reveal no-link" id="project-ashiana">
+      <div class="live-ph" aria-hidden="true"><span class="ph-k">iOS signing · TestFlight · App Store Connect</span><span class="ph-n">Ashiana Health</span><span class="ph-l">iOS release support only</span></div>
+      <span class="live-badge is-app"><span class="live-dot"></span>iOS Release Support &middot; Client App</span>
+      <h3>Ashiana Health</h3>
+      <span class="live-url">Client-owned app &middot; App Store review pending &middot; no public link</span>
+      <p>iOS release support for a client's health app. I did not build the app. My part was the iOS signing and build, a review of the build and its API setup before release, and the TestFlight and App Store submission. It is waiting for Apple review, so there is no public listing yet.</p>
+      <div class="tags"><span class="tag">iOS Signing</span><span class="tag">TestFlight</span><span class="tag">App Store Connect</span><span class="tag">Release QA</span></div>
     </div>
 
     <div class="live-card reveal no-link">
