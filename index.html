@@ -138,16 +138,7 @@ a{color:inherit}
 .say{position:absolute;z-index:6;left:30%;top:6%;background:var(--ink);color:var(--paper);font-size:13px;padding:8px 14px;border-radius:14px 14px 14px 4px;opacity:0;transform:translateY(8px) scale(.95);transition:opacity .3s,transform .3s;pointer-events:none}
 .stage:hover .say,.stage.poke .say{opacity:1;transform:none}
 
-/* stats band */
-.stats{background:var(--ink);color:var(--paper);position:relative;z-index:3}
-.stats .wrap{display:flex;justify-content:center}
-.stat{padding:30px 22px;display:flex;align-items:center;gap:18px}
-.stat .l{margin-top:0!important}
-.stat:last-child{border-right:0}
-.stat .n{font-family:var(--serif);font-size:clamp(40px,5vw,62px);line-height:1;font-weight:400}
-.stat .n sup{font-size:.45em;color:#E9906D;vertical-align:top;margin-left:2px}
-.stat .l{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#BDB6AA;margin-top:10px;font-weight:600}
-.marq{overflow:hidden;border-bottom:1px solid var(--line);background:var(--paper);padding:18px 0;white-space:nowrap}
+.marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);padding:18px 0;white-space:nowrap}
 .marq .track{display:inline-flex;gap:28px;align-items:center;animation:marq 40s linear infinite}
 .marq span{font-family:var(--serif);font-size:22px;color:var(--ink2)}
 .marq i{font-style:normal;color:var(--terra)}
@@ -442,11 +433,6 @@ main,.foot{position:relative;z-index:1}
   </div>
 </section>
 
-<section class="stats" aria-label="At a glance">
-  <div class="wrap">
-    <div class="stat"><div class="n"><span data-count="26">26</span><sup>+</sup></div><div class="l">Projects shipped</div></div>
-  </div>
-</section>
 <div class="marq" aria-label="Companies and clients I have worked with"><div class="track"><span>Hirdaramani</span><i>✦</i><span>Moien Delivery</span><i>✦</i><span>MOMS Oil Change</span><i>✦</i><span>Pizza Lab</span><i>✦</i><span>ATURRR</span><i>✦</i><span>River Homeschool</span><i>✦</i><span>Union Spare</span><i>✦</i><span>Artoria Zone</span><i>✦</i><span>Astrielle</span><i>✦</i><span>PhotoniX Research</span><i>✦</i><span>Books by Karl</span><i>✦</i><span>FF Gamer BD</span><i>✦</i><span>PI STAR</span><i>✦</i><span>School Care</span><i>✦</i><span>Fazar Mate</span><i>✦</i><span>Hirdaramani</span><i>✦</i><span>Moien Delivery</span><i>✦</i><span>MOMS Oil Change</span><i>✦</i><span>Pizza Lab</span><i>✦</i><span>ATURRR</span><i>✦</i><span>River Homeschool</span><i>✦</i><span>Union Spare</span><i>✦</i><span>Artoria Zone</span><i>✦</i><span>Astrielle</span><i>✦</i><span>PhotoniX Research</span><i>✦</i><span>Books by Karl</span><i>✦</i><span>FF Gamer BD</span><i>✦</i><span>PI STAR</span><i>✦</i><span>School Care</span><i>✦</i><span>Fazar Mate</span><i>✦</i></div></div>
 
 <section class="sec" id="about">
