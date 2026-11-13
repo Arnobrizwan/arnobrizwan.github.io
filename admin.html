@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · Project requests</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F4EFE6">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F4EFE6;color:#1C1A17;font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.wrap{max-width:1100px;margin:0 auto;padding:28px clamp(16px,4vw,40px) 60px}
+h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,4vw,44px);letter-spacing:-.02em}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.btn{border:1.5px solid #1C1A17;background:none;border-radius:99px;padding:10px 18px;font:600 14px 'Inter',sans-serif;cursor:pointer;color:#1C1A17;text-decoration:none}
+.btn.dark{background:#1C1A17;color:#FBF8F2}
+.btn.terra{background:#C4532F;border-color:#C4532F;color:#fff}
+.btn:hover{opacity:.85}
+.login{max-width:400px;margin:12vh auto 0;background:#FBF8F2;border:1px solid #DDD4C5;border-radius:22px;padding:34px;display:grid;gap:14px}
+.login p{color:#6B655C;font-size:14.5px}
+label{font-size:13px;font-weight:600}
+input,select,textarea{width:100%;border:1.5px solid #DDD4C5;background:#fff;border-radius:12px;padding:12px 14px;font:15px 'Inter',sans-serif;color:#1C1A17}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#C4532F}
+.msg{font-size:14px;border-radius:12px;padding:10px 14px;display:none}
+.msg.err{display:block;background:#FBE4E1;color:#8C1D18}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.st{background:#FBF8F2;border:1px solid #DDD4C5;border-radius:16px;padding:16px 18px;cursor:pointer}
+.st.on{border-color:#C4532F;background:#fff}
+.st b{font-family:'Fraunces',serif;font-size:32px;font-weight:400;display:block;line-height:1}
+.st span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6B655C;font-weight:600}
+.search{margin-bottom:16px}
+.card{background:#FBF8F2;border:1px solid #DDD4C5;border-radius:18px;padding:20px 22px;margin-bottom:14px}
+.card.new{border-left:4px solid #C4532F}
+.row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:start}
+.card h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px}
+.when{font-size:13px;color:#6B655C}
+.contact{font-weight:600;color:#C4532F;text-decoration:none;word-break:break-all}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{background:#F3DCD1;color:#8A3415;border-radius:99px;padding:4px 10px;font-size:12.5px;font-weight:600}
+.meta{font-size:13.5px;color:#3A3631;display:flex;gap:16px;flex-wrap:wrap}
+.text{white-space:pre-wrap;margin:12px 0;line-height:1.6;background:#fff;border:1px solid #EDE6DA;border-radius:12px;padding:12px 14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.actions select{width:auto;padding:8px 12px}
+.actions input{flex:1;min-width:180px;padding:8px 12px}
+.pill{border-radius:99px;padding:4px 10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.p-new{background:#C4532F;color:#fff}.p-contacted{background:#E8DCC2;color:#6B4E12}.p-done{background:#E3EFE6;color:#1E5A37}.p-archived{background:#E6E2DB;color:#6B655C}
+.empty{text-align:center;color:#6B655C;padding:50px 0}
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <form class="login" id="login" hidden>
+    <h1>Admin</h1>
+    <p>Sign in to see project and service requests from your portfolio.</p>
+    <div><label for="em">Email</label><input id="em" type="email" autocomplete="username" required></div>
+    <div><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+    <div class="msg" id="lmsg" role="alert"></div>
+    <button class="btn dark" type="submit" id="lbtn">Sign in</button>
+    <a href="/" style="font-size:14px;color:#6B655C">← Back to portfolio</a>
+  </form>
+
+  <div id="app" hidden>
+    <div class="top">
+      <h1>Project requests</h1>
+      <div style="display:flex;gap:10px"><button class="btn" id="refresh">Refresh</button><a class="btn" href="/" target="_blank">View site ↗</a><button class="btn dark" id="logout">Log out</button></div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <input class="search" id="q" placeholder="Search name, contact, service or message…" aria-label="Search requests">
+    <div id="list"></div>
+  </div>
+</div>
+<script>
+const API = "https://portfolio-api.arnobrizwan23.workers.dev";
+const KEY = "pf_admin_token";
+let all = [], filter = "all";
+const $ = (id) => document.getElementById(id);
+const tok = () => sessionStorage.getItem(KEY);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+async function api(path, opts = {}) {
+  const r = await fetch(API + path, {...opts, headers: {"Content-Type": "application/json", Authorization: "Bearer " + (tok() || ""), ...(opts.headers || {})}});
+  const j = await r.json().catch(() => ({}));
+  if (r.status === 401 && path !== "/api/admin/login") { sessionStorage.removeItem(KEY); showLogin("Session ended. Please sign in again."); throw new Error("auth"); }
+  if (!r.ok) throw new Error(j.error || "Request failed");
+  return j;
+}
+function showLogin(m) { $("app").hidden = true; $("login").hidden = false; if (m) { $("lmsg").textContent = m; $("lmsg").className = "msg err"; } }
+$("login").addEventListener("submit", async (e) => {
+  e.preventDefault(); $("lbtn").disabled = true; $("lbtn").textContent = "Signing in…"; $("lmsg").className = "msg";
+  try { const j = await api("/api/admin/login", {method: "POST", body: JSON.stringify({email: $("em").value, password: $("pw").value})}); sessionStorage.setItem(KEY, j.token); $("pw").value = ""; load(); }
+  catch (err) { $("lmsg").textContent = err.message; $("lmsg").className = "msg err"; }
+  finally { $("lbtn").disabled = false; $("lbtn").textContent = "Sign in"; }
+});
+$("logout").onclick = () => { sessionStorage.removeItem(KEY); showLogin(); };
+$("refresh").onclick = () => load();
+$("q").oninput = render;
+async function load() {
+  $("login").hidden = true; $("app").hidden = false;
+  try { all = (await api("/api/admin/requests")).requests; render(); } catch (e) { if (e.message !== "auth") $("list").innerHTML = `<p class="empty">${esc(e.message)}</p>`; }
+}
+function render() {
+  const counts = {all: all.length, new: 0, contacted: 0, done: 0};
+  all.forEach((r) => { if (counts[r.status] !== undefined) counts[r.status]++; });
+  $("stats").innerHTML = [["all","All requests"],["new","New"],["contacted","Contacted"],["done","Done"]].map(([k,l]) => `<div class="st ${filter===k?"on":""}" data-k="${k}"><b>${counts[k]}</b><span>${l}</span></div>`).join("");
+  $("stats").querySelectorAll(".st").forEach((el) => el.onclick = () => { filter = el.dataset.k; render(); });
+  const q = $("q").value.toLowerCase();
+  const rows = all.filter((r) => (filter === "all" || r.status === filter) && (!q || [r.name, r.contact, r.services, r.message, r.budget].join(" ").toLowerCase().includes(q)));
+  if (!rows.length) { $("list").innerHTML = `<p class="empty">${all.length ? "No requests match." : "No requests yet. They will appear here when someone uses the form on your site."}</p>`; return; }
+  $("list").innerHTML = rows.map((r) => {
+    const isMail = r.contact.includes("@");
+    const href = isMail ? `mailto:${encodeURIComponent(r.contact)}?subject=${encodeURIComponent("Your project request")}` : `https://wa.me/${r.contact.replace(/\D/g, "")}`;
+    const when = new Date(r.created_at.replace(" ", "T") + "Z").toLocaleString("en-GB", {timeZone: "Asia/Dhaka", dateStyle: "medium", timeStyle: "short"});
+    return `<article class="card ${r.status === "new" ? "new" : ""}">
+      <div class="row"><div><h3>${esc(r.name)} <span class="pill p-${esc(r.status)}">${esc(r.status)}</span></h3><a class="contact" href="${esc(href)}" target="_blank" rel="noopener">${esc(r.contact)} ↗</a></div><span class="when">${esc(when)} · #${r.id}</span></div>
+      <div class="tags">${r.services.split(", ").filter(Boolean).map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</div>
+      <div class="meta"><span><b>Budget:</b> ${esc(r.budget || "Not sure")}</span><span><b>When:</b> ${esc(r.timeline || "Flexible")}</span></div>
+      <div class="text">${esc(r.message)}</div>
+      <div class="actions">
+        <select data-id="${r.id}" class="status" aria-label="Status">${["new","contacted","done","archived"].map((s) => `<option ${s===r.status?"selected":""}>${s}</option>`).join("")}</select>
+        <input data-id="${r.id}" class="note" placeholder="Private note…" value="${esc(r.note)}" aria-label="Private note">
+        <a class="btn terra" href="${esc(href)}" target="_blank" rel="noopener">Reply</a>
+        <button class="btn del" data-id="${r.id}">Delete</button>
+      </div></article>`;
+  }).join("");
+  document.querySelectorAll(".status").forEach((el) => el.onchange = async () => { await api(`/api/admin/requests/${el.dataset.id}`, {method: "PATCH", body: JSON.stringify({status: el.value})}); all.find((r) => r.id == el.dataset.id).status = el.value; render(); });
+  document.querySelectorAll(".note").forEach((el) => el.onchange = async () => { await api(`/api/admin/requests/${el.dataset.id}`, {method: "PATCH", body: JSON.stringify({note: el.value})}); all.find((r) => r.id == el.dataset.id).note = el.value; });
+  document.querySelectorAll(".del").forEach((el) => el.onclick = async () => { if (!confirm("Delete this request?")) return; await api(`/api/admin/requests/${el.dataset.id}`, {method: "DELETE"}); all = all.filter((r) => r.id != el.dataset.id); render(); });
+}
+tok() ? load() : showLogin();
+</script>
+</body>
+</html>
